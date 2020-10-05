@@ -19,7 +19,7 @@ public class scrollhelp : MonoBehaviour
    void Update()
     {
 
-        print(content.transform.position);
+//        print(content.transform.position);
         if (content.transform.position.x > min)
         {
             Vector3 pos = content.transform.position;

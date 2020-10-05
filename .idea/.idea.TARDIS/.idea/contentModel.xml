@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Mustafa\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Mustafa\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_TARDIS.1114912255.00" t="ExcludeRecursive" />
+    <e p="D:\Unity Projects\TARDIS" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="20 Logos PSD" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="chunkfiveex" t="Include">
+              <e p="SIL Open Font License 1.1.txt" t="Include" />
+            </e>
+            <e p="firasansheavy" t="Include">
+              <e p="SIL Open Font License.txt" t="Include" />
+            </e>
+            <e p="kaushanscript" t="Include">
+              <e p="SIL Open Font License.txt" t="Include" />
+            </e>
+            <e p="molot" t="Include">
+              <e p="molot-eula.txt" t="Include" />
+            </e>
+            <e p="peacesans" t="Include">
+              <e p="FREE FONT LICENSE.txt" t="Include" />
+            </e>
+            <e p="Read Me.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Animation" t="Include">
+          <e p="CurveAnimation.cs" t="Include" />
+          <e p="CurveLibrary.cs" t="Include" />
+          <e p="ShakeAnimation.cs" t="Include" />
+          <e p="ShakeLibrary.cs" t="Include" />
+          <e p="TextAnimation.cs" t="Include" />
+        </e>
+        <e p="EarthSimplePlanets" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CloudRotation.cs" t="Include" />
+            <e p="EarthOptionsGUISimple.cs" t="Include" />
+            <e p="GeneralUI.cs" t="Include" />
+            <e p="RevealingLightManipulation.cs" t="Include" />
+            <e p="RevealNightEarthTexture.cs" t="Include" />
+            <e p="RotationAroundPlanet.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="DisplayNightEarthTexture.shader" t="Include" />
+          </e>
+        </e>
+        <e p="FireExplosionVFX" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="FxSplash.cs" t="Include" />
+            <e p="LaunchEffect.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="backButton.cs" t="Include" />
+          <e p="BallBounceSound.cs" t="Include" />
+          <e p="BallLauncher.cs" t="Include" />
+          <e p="CameraRotation.cs" t="Include" />
+          <e p="CannonBall.cs" t="Include" />
+          <e p="CannonController.cs" t="Include" />
+          <e p="CannonInterface.cs" t="Include" />
+          <e p="ChangeLookAtTarget.cs" t="Include" />
+          <e p="Cursor.cs" t="Include" />
+          <e p="DetectScoring.cs" t="Include" />
+          <e p="dronePlayer.cs" t="Include" />
+          <e p="GameOverScoreDisplay.cs" t="Include" />
+          <e p="helpScript.cs" t="Include" />
+          <e p="landscape.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
+          <e p="LookAtTarget.cs" t="Include" />
+          <e p="Math3d.cs" t="Include" />
+          <e p="open.cs" t="Include" />
+          <e p="ParticleMaster.cs" t="Include" />
+          <e p="PrimaryTrigger.cs" t="Include" />
+          <e p="ProjectileArc.cs" t="Include" />
+          <e p="ProjectileMath.cs" t="Include" />
+          <e p="RichTextTag.cs" t="Include" />
+          <e p="RotateAround.cs" t="Include" />
+          <e p="ScoreAbsorber.cs" t="Include" />
+          <e p="ScoreDisplay.cs" t="Include" />
+          <e p="ScoreKeeper.cs" t="Include" />
+          <e p="scrollhelp.cs" t="Include" />
+          <e p="SecondaryTrigger.cs" t="Include" />
+          <e p="SkyCamera.cs" t="Include" />
+          <e p="TextTagParser.cs" t="Include" />
+          <e p="TextTyper.cs" t="Include" />
+          <e p="TextTyperTester.cs" t="Include" />
+          <e p="TimeRemainingDisplay.cs" t="Include" />
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="ProjectorLight.shader" t="Include" />
+          <e p="UnlitAlphaTestColor.shader" t="Include" />
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="TARDIS.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
