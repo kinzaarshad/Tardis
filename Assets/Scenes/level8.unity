@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 53f3d4b8591a41b4994cc3df0dbd5bdc,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -441,6 +444,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.022058845, g: 0.019301489, b: 0.019301489, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -518,6 +523,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.022058845, g: 0.019301489, b: 0.019301489, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -550,6 +557,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 19127576}
     m_Modifications:
+    - target: {fileID: 3803355111156561496, guid: 7c88a4f6a58834843a687aab1ae092ff,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.20392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803355111156561496, guid: 7c88a4f6a58834843a687aab1ae092ff,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.20392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803355111156561496, guid: 7c88a4f6a58834843a687aab1ae092ff,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.20392157
+      objectReference: {fileID: 0}
     - target: {fileID: 3803355111778570660, guid: 7c88a4f6a58834843a687aab1ae092ff,
         type: 3}
       propertyPath: m_Name
@@ -747,7 +769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 13789248, guid: 9e6cf7da218ba4a41b1325cd6fdd27d0, type: 3}
       propertyPath: m_AABB.m_Extent.x
-      value: 0.67500025
+      value: 0.67500013
       objectReference: {fileID: 0}
     - target: {fileID: 13789248, guid: 9e6cf7da218ba4a41b1325cd6fdd27d0, type: 3}
       propertyPath: m_AABB.m_Extent.y
@@ -763,7 +785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 13789248, guid: 9e6cf7da218ba4a41b1325cd6fdd27d0, type: 3}
       propertyPath: m_AABB.m_Extent.z
-      value: 0.6750004
+      value: 0.6750003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e6cf7da218ba4a41b1325cd6fdd27d0, type: 3}
@@ -884,6 +906,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.022058845, g: 0.019301489, b: 0.019301489, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1174,6 +1198,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.022058845, g: 0.019301489, b: 0.019301489, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1388,6 +1414,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.022058845, g: 0.019301489, b: 0.019301489, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1595,6 +1623,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1619,6 +1648,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &1455346111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1976,6 +2006,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.022058845, g: 0.019301489, b: 0.019301489, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
