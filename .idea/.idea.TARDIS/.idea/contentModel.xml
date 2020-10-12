@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Mustafa\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Mustafa\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_TARDIS.1114912255.00" t="ExcludeRecursive" />
-    <e p="D:\Unity Projects\TARDIS" t="IncludeRecursive">
+    <e p="C:\Users\musta\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\musta\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Tardis.891539354.00" t="ExcludeRecursive" />
+    <e p="C:\Users\musta\Documents\Unity Projects\TARDIS" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="20 Logos PSD" t="Include">
@@ -50,6 +50,11 @@
           <e p="Scripts" t="Include">
             <e p="FxSplash.cs" t="Include" />
             <e p="LaunchEffect.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Mountain Terrain" t="Include">
+          <e p="Misc" t="Include">
+            <e p="CameraDefault.cs" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">

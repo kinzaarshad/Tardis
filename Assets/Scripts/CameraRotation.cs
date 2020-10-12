@@ -21,7 +21,7 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+#if !UNITY_EDITOR
         if (Input.touchCount > 0)
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
@@ -30,6 +30,7 @@ public class CameraRotation : MonoBehaviour
                 xAngleTemp = xAngle;
                 yAngleTemp = yAngle;
             }
+
             if (Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 SecondPoint = Input.GetTouch(0).position;
@@ -38,6 +39,24 @@ public class CameraRotation : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
             }
         }
+
+#elif UNITY_EDITOR
+        if (Input.GetMouseButtonDown(0))
+        {
+            FirstPoint = Input.mousePosition;
+            xAngleTemp = xAngle;
+            yAngleTemp = yAngle;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            SecondPoint = Input.mousePosition;
+            xAngle = xAngleTemp + (SecondPoint.x - FirstPoint.x) * 180 / Screen.width;
+            yAngle = yAngleTemp + (SecondPoint.y - FirstPoint.y) * 90 / Screen.height;
+            this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
+        }
+
+#endif
         //float rotationSpeed = 0.5f;
         //float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
         // float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
