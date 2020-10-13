@@ -5,34 +5,46 @@ using UnityEngine.UI;
 
 public class dronePlayer : MonoBehaviour
 {
-    public GameObject player;
-
-    //public GameObject camera;
-    int value;
-    bool connected = false;
-
     /// Start is called before the first frame update
     void Start()
     {
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (forward || Input.GetAxis("Vertical") > 0)
+        {
+            var delta = transform.forward * 5f;
+            transform.position += (delta * Time.fixedDeltaTime);
+        }
+
+        if (backward || Input.GetAxis("Vertical") < 0)
+        {
+            var delta = -transform.forward * 5f;
+            transform.position += (delta * Time.fixedDeltaTime);
+        }
     }
 
-    public void onForward()
+    private bool forward, backward;
+
+    public void onForwardEnter()
     {
-        var sideSpeed = 10;
-        Vector3 deltaPosition = transform.forward * sideSpeed;
-        player.transform.Translate(deltaPosition * Time.fixedDeltaTime);
+        forward = true;
     }
 
-    public void onStop()
+    public void onForwardExit()
     {
-        var sideSpeed = 10;
-        Vector3 deltaPosition = transform.forward * sideSpeed;
-        player.transform.Translate(-deltaPosition * Time.fixedDeltaTime);
+        forward = false;
+    }
+
+    public void onBackwardEnter()
+    {
+        backward = true;
+    }
+
+    public void onBackwardExit()
+    {
+        backward = false;
     }
 }
