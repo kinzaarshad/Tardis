@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.48764038, g: 0.54451966, b: 0.6124324, a: 1}
+  m_IndirectSpecularColor: {r: 0.48763984, g: 0.5445187, b: 0.61243147, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1720,6 +1720,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: dab2c1b588eef2344b03658ce566d079, type: 3}
       propertyPath: m_Name
       value: Terrain_01_low2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: dab2c1b588eef2344b03658ce566d079, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: dab2c1b588eef2344b03658ce566d079, type: 3}
       propertyPath: m_LocalPosition.x
