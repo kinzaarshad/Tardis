@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class dronePlayer : MonoBehaviour
 {
+    private Rigidbody rigidbody;
+
     /// Start is called before the first frame update
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -16,35 +19,29 @@ public class dronePlayer : MonoBehaviour
         if (forward || Input.GetAxis("Vertical") > 0)
         {
             var delta = transform.forward * 5f;
-            transform.position += (delta * Time.fixedDeltaTime);
+            rigidbody.AddForce(delta);
+
         }
 
-        if (backward || Input.GetAxis("Vertical") < 0)
+        else if (backward || Input.GetAxis("Vertical") < 0)
         {
             var delta = -transform.forward * 5f;
-            transform.position += (delta * Time.fixedDeltaTime);
+            rigidbody.AddForce(delta);
+
+        }
+        else
+        {
+            rigidbody.Sleep();
         }
     }
 
     private bool forward, backward;
 
-    public void onForwardEnter()
-    {
-        forward = true;
-    }
+    public void onForwardEnter() => forward = true;
 
-    public void onForwardExit()
-    {
-        forward = false;
-    }
+    public void onForwardExit() => forward = false;
 
-    public void onBackwardEnter()
-    {
-        backward = true;
-    }
+    public void onBackwardEnter() => backward = true;
 
-    public void onBackwardExit()
-    {
-        backward = false;
-    }
+    public void onBackwardExit() => backward = false;
 }

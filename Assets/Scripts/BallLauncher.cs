@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BallLauncher : MonoBehaviour {
-
+public class BallLauncher : MonoBehaviour
+{
     public GameObject ballPreFab;
     public float ballSpeed = 6.0f;
 
     // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+    }
 
-       
+    // Update is called once per frame
+    void Update()
+    {
         //float rotationSpeed = 0.5f;
         //float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
         //float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
@@ -26,8 +25,8 @@ public class BallLauncher : MonoBehaviour {
 
     public void launch()
     {
-        GameObject instance = Instantiate(ballPreFab);
-        instance.transform.position = transform.position;
+        GameObject instance =
+            Instantiate(ballPreFab, transform.position + (transform.forward) * 4, Quaternion.identity);
         Rigidbody rb = instance.GetComponent<Rigidbody>();
         Camera camera = GetComponentInChildren<Camera>();
         rb.velocity = camera.transform.rotation * Vector3.forward * ballSpeed;

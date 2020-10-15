@@ -44,8 +44,7 @@ public class ScoreKeeper : MonoBehaviour
         score += amount;
         AudioSource source = GetComponent<AudioSource>();
         source.Play();
-        source.Play();
-        source.Play();
+
         //SceneManager.LoadScene(1);
     }
 }
