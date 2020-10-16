@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class CameraRotation : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class CameraRotation : MonoBehaviour
             clicked = false;
         }
 
-        if (clicked)
+        if (clicked  && !TouchingUI())
         {
 #if UNITY_EDITOR
             xAngle += Input.GetAxis("Mouse X") * 20f;
@@ -64,4 +65,7 @@ public class CameraRotation : MonoBehaviour
         //Camera camera = GetComponentInChildren<Camera>();
         //camera.transform.localRotation = Quaternion.Euler(-mouseY, 0, 0) * camera.transform.localRotation;
     }
+    
+        bool TouchingUI() => EventSystem.current.IsPointerOverGameObject();
+
 }

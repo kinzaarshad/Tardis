@@ -25,8 +25,7 @@ public class BallLauncher : MonoBehaviour
 
     public void launch()
     {
-        GameObject instance =
-            Instantiate(ballPreFab, transform.position + (transform.forward) * 4, Quaternion.identity);
+        GameObject instance = Instantiate(ballPreFab, transform.position, Quaternion.identity);
         Rigidbody rb = instance.GetComponent<Rigidbody>();
         Camera camera = GetComponentInChildren<Camera>();
         rb.velocity = camera.transform.rotation * Vector3.forward * ballSpeed;

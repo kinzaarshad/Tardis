@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SecondaryTrigger : MonoBehaviour {
-
+public class SecondaryTrigger : MonoBehaviour
+{
     Collider expectedCollider;
 
-	public void ExpectCollider(Collider collider)
+    public void ExpectCollider(Collider collider)
     {
         expectedCollider = collider;
     }
 
-    void OnTriggerEnter(Collider otherCollider)
+    void OnTriggerEnter(Collider other)
     {
         //print("1");
-        if (otherCollider == expectedCollider)
+        if (other == expectedCollider)
         {
             //print("Trigger Entered");
             ScoreKeeper scoreKeeper = FindObjectOfType<ScoreKeeper>();
