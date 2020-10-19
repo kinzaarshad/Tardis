@@ -34,10 +34,12 @@ public class dronePlayer : MonoBehaviour
             rigidbody.Sleep();
         }
 
-        Vector3 direction = sk.ring.transform.position - transform.position;
+        Vector3 direction = transform.position - sk.ring.transform.position;
         direction = Math3d.ProjectVectorOnPlane(Vector3.up, direction);
-        float distance = Vector3.Distance(transform.position, sk.ring.transform.position);
-        ProjectileArc.UpdateArc(5f, distance, Physics.gravity.magnitude, 45 * Mathf.Deg2Rad, direction, true);
+//        float distance = Vector3.Distance(transform.position, sk.ring.transform.position);
+        float distance = direction.magnitude;
+        ProjectileArc.UpdateArc(20f, distance, Physics.gravity.magnitude,
+            Quaternion.Angle(Quaternion.Euler(transform.forward), transform.rotation) * Mathf.Deg2Rad, direction, true);
     }
 
     private bool forward, backward;

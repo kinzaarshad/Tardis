@@ -43,7 +43,7 @@ public class SkyCamera : MonoBehaviour
 
         currentDistance = Mathf.Clamp(currentDistance + zoomInput, minDistance, maxDistance);
 
-        Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        Vector3 moveInput = new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y"));
 
         if (moveInput != Vector3.zero)
             velocity = Vector3.MoveTowards(velocity, moveInput.normalized * speed, acceleration * Time.deltaTime);
@@ -52,6 +52,6 @@ public class SkyCamera : MonoBehaviour
 
         position += velocity;
 
-        //transform.position = -transform.forward * currentDistance + position;
+        transform.position = -transform.forward * currentDistance + position;
     }
 }
