@@ -7,7 +7,7 @@ public class Cursor : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, float.MaxValue, 1 << LayerMask.NameToLayer("Ground")))
+        if (Physics.Raycast(ray, out hit, float.MaxValue, LayerMask.GetMask("Ground")))
         {
             transform.position = hit.point;
         }
