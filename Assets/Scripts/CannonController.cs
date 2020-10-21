@@ -90,7 +90,7 @@ public class CannonController : MonoBehaviour
         if (Time.time > lastShotTime + cooldown)
         {
             GameObject p = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-            p.GetComponent<Rigidbody>().velocity = turret.up * currentSpeed;
+            p.GetComponent<Rigidbody>().velocity = turret.forward * currentSpeed;
 
             Instantiate(cannonFirePrefab, smokePuffPoint.position, Quaternion.LookRotation(turret.up));
 
@@ -104,7 +104,7 @@ public class CannonController : MonoBehaviour
 
     private void SetTurret(Vector3 planarDirection, float turretAngle)
     {
-        cannonBase.rotation =  Quaternion.LookRotation(planarDirection) * Quaternion.Euler(-90, -90, 0);
-        turret.localRotation = Quaternion.Euler(90, 90, 0) * Quaternion.AngleAxis(turretAngle, Vector3.forward);        
+        cannonBase.rotation =  Quaternion.LookRotation(planarDirection) * Quaternion.identity;
+//        turret.localRotation = Quaternion.Euler(0, 0, 0) * Quaternion.AngleAxis(turretAngle, Vector3.right);        
     }
 }

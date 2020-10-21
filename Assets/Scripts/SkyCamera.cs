@@ -21,7 +21,6 @@ public class SkyCamera : MonoBehaviour
 
     private float currentDistance;
 
-    private Rigidbody rigidbody;
 
     void Awake()
     {
@@ -30,8 +29,6 @@ public class SkyCamera : MonoBehaviour
         currentDistance = (minDistance + maxDistance) * 0.5f;
 
         transform.rotation = Quaternion.AngleAxis(incline, Vector3.right);
-
-        rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -48,11 +45,11 @@ public class SkyCamera : MonoBehaviour
             velocity = Vector3.MoveTowards(velocity, Vector3.zero, decceleration * Time.deltaTime);
 
 
-//        if (Mathf.Abs(transform.position.x) < 50 && Mathf.Abs(transform.position.y) < 50)
-            position += velocity;
+        Vector3 temp = position + velocity;
+        temp.x = Mathf.Clamp(temp.x, -50f, 50f);
+        temp.z = Mathf.Clamp(temp.z, -50f, 50f);
+        position = temp;
 
-        rigidbody.MovePosition(-transform.forward * currentDistance + position);
-
-//        transform.position = -transform.forward * currentDistance + position;
+        transform.position = -transform.forward * currentDistance + position;
     }
 }

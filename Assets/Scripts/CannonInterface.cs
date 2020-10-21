@@ -51,7 +51,7 @@ public class CannonInterface : MonoBehaviour
 
         //cannon.SetTargetWithSpeed(targetCursor.transform.position, initialFireSpeed, angle);
 
-        if (Input.GetButtonDown("Fire1") && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetButtonUp("Fire1") && !EventSystem.current.IsPointerOverGameObject())
         {
             cannon.Fire();
         }
