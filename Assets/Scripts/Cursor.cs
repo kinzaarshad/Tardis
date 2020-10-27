@@ -1,15 +1,21 @@
 using UnityEngine;
 
-public class Cursor : MonoBehaviour 
-{    
-	void Update () 
-	{
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+public class Cursor : MonoBehaviour
+{
+    public CannonTargetManager cannonTargetManager;
 
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, float.MaxValue, LayerMask.GetMask("Ground")))
+    void Update()
+    {
+#if UNITY_EDITOR
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+#elif !UNITY_EDITOR
+        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+#endif
+
+        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, LayerMask.GetMask("Ground", "CannonTarget")))
         {
             transform.position = hit.point;
+            cannonTargetManager.ChangeTargetColor(hit.collider.CompareTag("CannonTarget"));
         }
-	}
+    }
 }

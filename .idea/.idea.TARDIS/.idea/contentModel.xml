@@ -101,6 +101,8 @@
           <e p="CannonBall.cs" t="Include" />
           <e p="CannonController.cs" t="Include" />
           <e p="CannonInterface.cs" t="Include" />
+          <e p="CannonSceneManager.cs" t="Include" />
+          <e p="CannonTargetManager.cs" t="Include" />
           <e p="ChangeLookAtTarget.cs" t="Include" />
           <e p="Cursor.cs" t="Include" />
           <e p="DetectScoring.cs" t="Include" />

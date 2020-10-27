@@ -45,7 +45,7 @@ public class CannonInterface : MonoBehaviour
     void Update()
     {
        // if (useInitialAngle)
-            cannon.SetTargetWithAngle(targetCursor.transform.position, initialFireAngle);
+            cannon.SetTargetWithAngle(targetCursor.transform.position, initialFireAngle, initialFireSpeed);
         //else
             //cannon.SetTargetWithSpeed(targetCursor.transform.position, initialFireSpeed, useLowAngle);
 
