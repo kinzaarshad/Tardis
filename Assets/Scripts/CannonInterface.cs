@@ -3,25 +3,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class CannonInterface : MonoBehaviour 
+public class CannonInterface : MonoBehaviour
 {
-    [SerializeField]
-    Cursor targetCursor;
+    [SerializeField] Cursor targetCursor;
 
-    [SerializeField]
-    CannonController cannon;
+    [SerializeField] CannonController cannon;
 
-    [SerializeField]
-    Text timeOfFlightText;
+    [SerializeField] Text timeOfFlightText;
 
-    [SerializeField]
-    float defaultFireSpeed = 35;
+    [SerializeField] float defaultFireSpeed = 35;
 
-    [SerializeField]
-    float defaultFireAngle = 45;
+    [SerializeField] float defaultFireAngle = 45;
 
-    [SerializeField]
-    float angle = 45;
 
     private float initialFireAngle;
     private float initialFireSpeed;
@@ -30,7 +23,6 @@ public class CannonInterface : MonoBehaviour
     private bool useInitialAngle;
     //public float angle;
 
-  
 
     void Awake()
     {
@@ -44,10 +36,10 @@ public class CannonInterface : MonoBehaviour
 
     void Update()
     {
-       // if (useInitialAngle)
-            cannon.SetTargetWithAngle(targetCursor.transform.position, initialFireAngle, initialFireSpeed);
+        // if (useInitialAngle)
+//        cannon.SetTargetWithAngle(targetCursor.transform.position, initialFireAngle);
         //else
-            //cannon.SetTargetWithSpeed(targetCursor.transform.position, initialFireSpeed, useLowAngle);
+        cannon.SetTargetWithSpeed(targetCursor.transform.position, initialFireSpeed, useLowAngle);
 
         //cannon.SetTargetWithSpeed(targetCursor.transform.position, initialFireSpeed, angle);
 
@@ -56,7 +48,9 @@ public class CannonInterface : MonoBehaviour
             cannon.Fire();
         }
 
-        timeOfFlightText.text = Mathf.Clamp(cannon.lastShotTimeOfFlight - (Time.time - cannon.lastShotTime), 0, float.MaxValue).ToString("F3");
+        timeOfFlightText.text =
+            Mathf.Clamp(cannon.lastShotTimeOfFlight - (Time.time - cannon.lastShotTime), 0, float.MaxValue)
+                .ToString("F3");
     }
 
     public void SetInitialFireAngle(string angle)

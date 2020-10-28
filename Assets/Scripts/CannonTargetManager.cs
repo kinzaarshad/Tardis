@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CannonTargetManager : MonoBehaviour
 {
@@ -24,22 +25,27 @@ public class CannonTargetManager : MonoBehaviour
         float distance = Random.Range(10f, 60f);
 
         target.Rotate(new Vector3(0, angle, 0));
-        target.Translate(Vector3.zero);
-        target.Translate(new Vector3(distance, 0f, distance));
-        Ray ray = new Ray();
+        target.Translate(Vector3.zero, Space.Self);
+        target.Translate(new Vector3(distance, 0, distance), Space.Self);
 
-        ray.origin = target.position;
-        ray.direction = target.up;
-        
-        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue /*, LayerMask.GetMask("Ground")*/))
+        arrow.position = target.position;
+
+        StartCoroutine(VerticallyAlignTarget());
+    }
+
+    IEnumerator VerticallyAlignTarget()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        RaycastHit hit;
+        if (Physics.Raycast(target.position, -target.up, out hit, float.MaxValue, LayerMask.GetMask("Ground")))
         {
             var temp = target.position;
             temp.y = hit.point.y;
             target.position = temp;
+            target.up = hit.normal;
+            arrow.position = temp + Vector3.up * 3.5f;
         }
-
-
-        Debug.DrawRay(target.position + target.up, target.up * 100000f, Color.blue);
     }
 
     public void ChangeTargetColor(bool cursorOnTarget)

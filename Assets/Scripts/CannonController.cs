@@ -32,24 +32,21 @@ public class CannonController : MonoBehaviour
     public float lastShotTime { get; private set; }
     public float lastShotTimeOfFlight { get; private set; }
 
-    public void SetTargetWithAngle(Vector3 point, float angle, float speed)
+    public void SetTargetWithAngle(Vector3 point, float angle)
     {
         currentAngle = angle;
-        currentSpeed = speed;
 
-        Vector3 direction = point - (firePoint.position + firePoint.forward);
+        Vector3 direction = point - firePoint.position;
         float yOffset = -direction.y;
         direction = Math3d.ProjectVectorOnPlane(Vector3.up, direction);
         float distance = direction.magnitude;
 
-        currentSpeed = ProjectileMath.LaunchSpeed(distance, yOffset * 2, Physics.gravity.magnitude, angle * Mathf.Deg2Rad);
-        TimeOfFlight = currentTimeOfFlight;
-        projectileArc.UpdateArc(currentSpeed, distance, Physics.gravity.magnitude, currentAngle * Mathf.Deg2Rad,
-            direction, true);
+        currentSpeed = ProjectileMath.LaunchSpeed(distance, yOffset, Physics.gravity.magnitude, angle * Mathf.Deg2Rad);
+
+        projectileArc.UpdateArc(currentSpeed, distance, Physics.gravity.magnitude, currentAngle * Mathf.Deg2Rad, direction, true);
         SetTurret(direction, currentAngle);
 
-        currentTimeOfFlight = ProjectileMath.TimeOfFlight(currentSpeed, currentAngle * Mathf.Deg2Rad, yOffset,
-            Physics.gravity.magnitude);
+        currentTimeOfFlight = ProjectileMath.TimeOfFlight(currentSpeed, currentAngle * Mathf.Deg2Rad, yOffset, Physics.gravity.magnitude);
 
         Distance.text = "Distance: " + distance.ToString("F2");
         time.text = "Time: " + distance.ToString("F2") + "/" + currentSpeed.ToString("F2") +
@@ -84,7 +81,7 @@ public class CannonController : MonoBehaviour
         if (Time.time > lastShotTime + cooldown)
         {
             GameObject p = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-            p.GetComponent<Rigidbody>().velocity = (turret.forward * currentSpeed) * 1.5f;
+            p.GetComponent<Rigidbody>().velocity = (turret.forward * currentSpeed);
 
             Instantiate(cannonFirePrefab, smokePuffPoint.position, Quaternion.LookRotation(turret.forward));
 
@@ -98,7 +95,7 @@ public class CannonController : MonoBehaviour
 
     private void SetTurret(Vector3 planarDirection, float turretAngle)
     {
-        cannonBase.rotation = Quaternion.LookRotation(planarDirection) * Quaternion.identity;
-//        turret.localRotation = Quaternion.Euler(0, 0, 0) * Quaternion.AngleAxis(turretAngle, Vector3.right);        
+        cannonBase.rotation = Quaternion.LookRotation(planarDirection);
+        turret.localRotation =  Quaternion.AngleAxis(turretAngle, -Vector3.right);        
     }
 }

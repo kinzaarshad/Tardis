@@ -44,8 +44,8 @@ public class dronePlayer : MonoBehaviour
 //        Ray ray = Camera.main.ScreenPointToRay(direction);
 
 //        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue /*, LayerMask.GetMask("Ground")*/))
-        if (Physics.Raycast(transform.position, transform.forward,
-            out RaycastHit hit /*, LayerMask.GetMask("Ground")*/))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit
+            /*, LayerMask.GetMask("Ground")*/))
             direction = hit.point - transform.position;
 /*
         float yOffset = -direction.y;
@@ -61,11 +61,19 @@ public class dronePlayer : MonoBehaviour
 
         direction = Math3d.ProjectVectorOnPlane(Vector3.up, direction);
 //        float distance = Vector3.Distance(transform.position, sk.ring.transform.position);
+        float yOffset = direction.y;
         float distance = direction.magnitude;
         ProjectileArc.transform.position = transform.position + (transform.forward * 5f);
+//        ProjectileArc.UpdateArc(ballLauncher.ballSpeed, distance, Physics.gravity.magnitude,
+//            Quaternion.Angle(Quaternion.LookRotation(transform.forward, Vector3.up), Quaternion.identity) *
+//            Mathf.Deg2Rad, direction, true);
+
+        float angle0, angle1;
+        bool targetInRange =
+            ProjectileMath.LaunchAngle(ballLauncher.ballSpeed, distance, yOffset, Physics.gravity.magnitude, out angle0, out angle1);
+
         ProjectileArc.UpdateArc(ballLauncher.ballSpeed, distance, Physics.gravity.magnitude,
-            Quaternion.Angle(Quaternion.LookRotation(transform.forward, Vector3.up), Quaternion.identity) *
-            Mathf.Deg2Rad, direction, true);
+            45 * Mathf.Deg2Rad, direction, true);
     }
 
     private bool forward, backward;

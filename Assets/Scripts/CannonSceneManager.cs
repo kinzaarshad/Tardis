@@ -21,7 +21,7 @@ public class CannonSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        var var = PlayerPrefs.GetString("CurrentPlanet", "Venus");
+        var var = PlayerPrefs.GetString("CurrentPlanet", "Jupiter");
         var ind = (int) Enum.Parse(typeof(Planets), var);
         Terrain.GetComponent<Renderer>().material = planetMaterials[ind];
     }

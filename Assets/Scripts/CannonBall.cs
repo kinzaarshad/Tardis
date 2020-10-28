@@ -1,4 +1,4 @@
-using UnityEngine;
+   using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -37,14 +37,14 @@ public class CannonBall : MonoBehaviour
         Destroy(gameObject);
         float time = CannonController.TimeOfFlight;
 
-        if (time==Target)
+        /*if (time==Target)
         {
             Time.timeScale = 0.5f;
            // Instantiate(FxPrefabLOW, new Vector3(0, 20, 0), Quaternion.identity);
             Instantiate(FxPrefabLOW, transform.position, Quaternion.LookRotation(collision.contacts[0].normal));
 
             //SceneManager.LoadScene(1);
-        }
+        }*/
 
     }
 }
