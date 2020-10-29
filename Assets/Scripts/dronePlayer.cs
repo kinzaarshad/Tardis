@@ -40,41 +40,50 @@ public class dronePlayer : MonoBehaviour
         }
 
 
-        Vector3 direction = transform.forward;
-//        Ray ray = Camera.main.ScreenPointToRay(direction);
+        Vector3 direction = transform.position;
 
-//        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue /*, LayerMask.GetMask("Ground")*/))
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit
-            /*, LayerMask.GetMask("Ground")*/))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit,
+            LayerMask.GetMask("Ground", "board", "ring", "net")))
+        {
             direction = hit.point - transform.position;
-/*
-        float yOffset = -direction.y;
+        }
+
         direction = Math3d.ProjectVectorOnPlane(Vector3.up, direction);
         float distance = direction.magnitude;
 
-        currentSpeed = ProjectileMath.LaunchSpeed(distance, yOffset, Physics.gravity.magnitude, angle * Mathf.Deg2Rad);
-        TimeOfFlight = currentTimeOfFlight;
-        ProjectileArc.UpdateArc(20f, distance, Physics.gravity.magnitude, currentAngle * Mathf.Deg2Rad, direction, true);
-        
-        Vector3 direction = transform.position - sk.ring.transform.position;
-*/
+        ProjectileArc.transform.position = transform.position;
 
-        direction = Math3d.ProjectVectorOnPlane(Vector3.up, direction);
-//        float distance = Vector3.Distance(transform.position, sk.ring.transform.position);
-        float yOffset = direction.y;
-        float distance = direction.magnitude;
-        ProjectileArc.transform.position = transform.position + (transform.forward * 5f);
-//        ProjectileArc.UpdateArc(ballLauncher.ballSpeed, distance, Physics.gravity.magnitude,
-//            Quaternion.Angle(Quaternion.LookRotation(transform.forward, Vector3.up), Quaternion.identity) *
-//            Mathf.Deg2Rad, direction, true);
+        float angle = Quaternion.Angle(Quaternion.LookRotation(transform.forward, Vector3.up), Quaternion.identity);
 
-        float angle0, angle1;
-        bool targetInRange =
-            ProjectileMath.LaunchAngle(ballLauncher.ballSpeed, distance, yOffset, Physics.gravity.magnitude, out angle0, out angle1);
-
-        ProjectileArc.UpdateArc(ballLauncher.ballSpeed, distance, Physics.gravity.magnitude,
-            45 * Mathf.Deg2Rad, direction, true);
+        ProjectileArc.UpdateArc(ballLauncher.ballSpeed, distance, Physics.gravity.magnitude, angle * Mathf.Deg2Rad,
+            direction, true);
     }
+
+/*    
+    void FixedUpdate()
+    {
+        Vector3 last_pos = transform.position;
+        Vector3 velocity = transform.forward * 20;
+        ProjectileArc.GetComponent<LineRenderer>().SetVertexCount(1);
+        ProjectileArc.GetComponent<LineRenderer>().SetPosition(0, last_pos);
+        int i = 1;
+        while (i < 200)
+        {
+            velocity += Physics.gravity * Time.fixedDeltaTime;
+            RaycastHit hit;
+            if (Physics.Linecast(last_pos, (last_pos + (velocity * Time.fixedDeltaTime)), out hit))
+            {
+                velocity = Vector3.Reflect(velocity * 1f, hit.normal);
+                last_pos = hit.point;
+            }
+
+            ProjectileArc.GetComponent<LineRenderer>().SetVertexCount(i + 1);
+            ProjectileArc.GetComponent<LineRenderer>().SetPosition(i, last_pos);
+            last_pos += velocity * Time.fixedDeltaTime;
+            i++;
+        }
+    }
+*/
 
     private bool forward, backward;
 
