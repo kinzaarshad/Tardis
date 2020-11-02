@@ -3,6 +3,14 @@ using System.Collections;
 
 public class SecondaryTrigger : MonoBehaviour
 {
+    public static SecondaryTrigger Instance;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
     Collider expectedCollider;
 
     public void ExpectCollider(Collider collider)
@@ -10,14 +18,8 @@ public class SecondaryTrigger : MonoBehaviour
         expectedCollider = collider;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collider)
     {
-        //print("1");
-        if (other == expectedCollider)
-        {
-            //print("Trigger Entered");
-            ScoreKeeper scoreKeeper = FindObjectOfType<ScoreKeeper>();
-            scoreKeeper.IncrementScore(1);
-        }
+        ThirdTrigger.Instance.ExpectCollider(collider);
     }
 }

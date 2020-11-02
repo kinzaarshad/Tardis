@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PrimaryTrigger : MonoBehaviour {
+public class PrimaryTrigger : MonoBehaviour
+{
+    public static PrimaryTrigger Instance;
 
-	void OnTriggerEnter(Collider collider)
+    void Awake()
     {
-        SecondaryTrigger trigger = GetComponentInChildren<SecondaryTrigger>();
-        trigger.ExpectCollider(collider);
+        if (Instance == null)
+            Instance = this;
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        SecondaryTrigger.Instance.ExpectCollider(collider);
     }
 }

@@ -14,6 +14,14 @@ public class ScoreKeeper : MonoBehaviour
     public Text Angle;
     public Text Time;
 
+    public static ScoreKeeper Instance;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
     // Use this for initialization
     void Start()
     {

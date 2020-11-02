@@ -43,7 +43,7 @@ public class dronePlayer : MonoBehaviour
         Vector3 direction = transform.position;
 
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit,
-            LayerMask.GetMask("Ground", "board", "ring", "net")))
+            LayerMask.GetMask("Ground")))
         {
             direction = hit.point - transform.position;
         }
