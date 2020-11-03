@@ -762,6 +762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPreFab: {fileID: 181448, guid: f13ef45a14d378049a882a35a9588d8c, type: 3}
   ballSpeed: 20
+  rb: {fileID: 0}
 --- !u!4 &646861496
 Transform:
   m_ObjectHideFlags: 0
@@ -1573,7 +1574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156678197b8a2f94999c7b79bfe099c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 646861493}
+  ProjectileArc: {fileID: 0}
+  sk: {fileID: 0}
 --- !u!4 &991052424
 Transform:
   m_ObjectHideFlags: 0

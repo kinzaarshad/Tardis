@@ -22,7 +22,7 @@ public class CannonTargetManager : MonoBehaviour
     public void AssignRandomPosition()
     {
         float angle = Random.Range(0f, 360f);
-        float distance = Random.Range(10f, 60f);
+        float distance = Random.Range(10f, 50f);
 
         target.Rotate(new Vector3(0, angle, 0));
         target.Translate(Vector3.zero, Space.Self);

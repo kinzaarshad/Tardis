@@ -24,11 +24,12 @@ public class ProjectileArc : MonoBehaviour
         for (int i = 0; i < arcPoints.Length; i++)
         {
             Vector3 point = new Vector3(0, arcPoints[i].y, arcPoints[i].x);
-            Vector3 nextPoint = Vector3.zero;
+            /*Vector3 nextPoint = Vector3.zero;
             if ((i + 1) < arcPoints.Length)
                 nextPoint = new Vector3(0, arcPoints[i + 1].y, arcPoints[i + 1].x);
-//            if (!Physics.Linecast(point, nextPoint))
-            if (Physics.SphereCast(point, Vector3.Distance(point, nextPoint),nextPoint - point, out RaycastHit hit))
+
+            Ray ray = new Ray(point, nextPoint - point);
+            if (!Physics.Raycast(ray, float.MaxValue, LayerMask.GetMask("Ground")))*/
                 points3d.Add(point);
         }
 

@@ -11,6 +11,8 @@ public class BallLauncher : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (PredictionManager.Instance != null)
+            PredictionManager.Instance.copyAllObstacles();
     }
 
     // Update is called once per frame
@@ -23,6 +25,9 @@ public class BallLauncher : MonoBehaviour
         //transform.localRotation = Quaternion.Euler(0, mouseX, 0) * transform.localRotation;
         //Camera camera = GetComponentInChildren<Camera>();
         //camera.transform.localRotation = Quaternion.Euler(-mouseY, 0, 0) * camera.transform.localRotation;
+        if (PredictionManager.Instance != null)
+            PredictionManager.Instance.predict(ballPreFab, transform.position,
+                transform.rotation * Vector3.forward * ballSpeed);
     }
 
     public void launch()

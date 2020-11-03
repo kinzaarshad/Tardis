@@ -28,7 +28,6 @@ public class dronePlayer : MonoBehaviour
             var delta = transform.forward * 5f;
             rigidbody.AddForce(delta);
         }
-
         else if (backward || Input.GetAxis("Vertical") < 0)
         {
             var delta = -transform.forward * 5f;
@@ -40,50 +39,29 @@ public class dronePlayer : MonoBehaviour
         }
 
 
-        Vector3 direction = transform.position;
+/*        float currentAngle = 45;
 
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit,
-            LayerMask.GetMask("Ground")))
-        {
-            direction = hit.point - transform.position;
-        }
-
+        Vector3 velocity = transform.rotation * Vector3.forward * ballLauncher.ballSpeed;
+        Vector3 point = transform.position + velocity;
+        print(point);
+        Vector3 direction = point - transform.position;
+        float yOffset = -direction.y;
         direction = Math3d.ProjectVectorOnPlane(Vector3.up, direction);
         float distance = direction.magnitude;
 
+        float angle0, angle1;
+        bool targetInRange =
+            ProjectileMath.LaunchAngle(ballLauncher.ballSpeed, distance, yOffset, Physics.gravity.magnitude, out angle0,
+                out angle1);
+
+
+        currentAngle = angle1;
+
         ProjectileArc.transform.position = transform.position;
-
-        float angle = Quaternion.Angle(Quaternion.LookRotation(transform.forward, Vector3.up), Quaternion.identity);
-
-        ProjectileArc.UpdateArc(ballLauncher.ballSpeed, distance, Physics.gravity.magnitude, angle * Mathf.Deg2Rad,
-            direction, true);
+        ProjectileArc.UpdateArc(ballLauncher.ballSpeed, distance, Physics.gravity.magnitude,
+            currentAngle * Mathf.Deg2Rad,
+            direction, true);*/
     }
-
-/*    
-    void FixedUpdate()
-    {
-        Vector3 last_pos = transform.position;
-        Vector3 velocity = transform.forward * 20;
-        ProjectileArc.GetComponent<LineRenderer>().SetVertexCount(1);
-        ProjectileArc.GetComponent<LineRenderer>().SetPosition(0, last_pos);
-        int i = 1;
-        while (i < 200)
-        {
-            velocity += Physics.gravity * Time.fixedDeltaTime;
-            RaycastHit hit;
-            if (Physics.Linecast(last_pos, (last_pos + (velocity * Time.fixedDeltaTime)), out hit))
-            {
-                velocity = Vector3.Reflect(velocity * 1f, hit.normal);
-                last_pos = hit.point;
-            }
-
-            ProjectileArc.GetComponent<LineRenderer>().SetVertexCount(i + 1);
-            ProjectileArc.GetComponent<LineRenderer>().SetPosition(i, last_pos);
-            last_pos += velocity * Time.fixedDeltaTime;
-            i++;
-        }
-    }
-*/
 
     private bool forward, backward;
 

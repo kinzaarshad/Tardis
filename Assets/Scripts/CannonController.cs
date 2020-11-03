@@ -74,6 +74,10 @@ public class CannonController : MonoBehaviour
 
         currentTimeOfFlight =
             ProjectileMath.TimeOfFlight(currentSpeed, currentAngle, -yOffset, Physics.gravity.magnitude);
+        
+        Distance.text = "Distance: " + distance.ToString("F1");
+        time.text = "Time: " + distance.ToString("F1") + "/" + currentSpeed.ToString("F1") +
+                    " * Cos(" + currentAngle + ")";
     }
 
     public void Fire()

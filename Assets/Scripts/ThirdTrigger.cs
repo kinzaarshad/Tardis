@@ -49,6 +49,9 @@ public class ThirdTrigger : MonoBehaviour
         Vector3 pos = new Vector3(Random.Range(-35f, 35f), -3.5f, Random.Range(-90f, 90f));
         transform.root.position = pos;
         transform.root.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        
+        PredictionManager.Instance.killAllObstacles();
+        PredictionManager.Instance.copyAllObstacles();
 
         foreach (var renderer in renderers)
             renderer.enabled = true;

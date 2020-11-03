@@ -152,7 +152,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2883,6 +2883,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d841401a287cc1647ac38fa3c2b06e08, type: 2}
   - {fileID: 2100000, guid: c6763672eeaa0b94d884ee0e2f608dbf, type: 2}
   - {fileID: 2100000, guid: 54bfa1e011b5a714ca72799d09776b1b, type: 2}
+  infoButton: {fileID: 1651904517}
+  doTweenAnimation: {fileID: 1274608807}
 --- !u!1 &1627182150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,8 +3066,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketballUIManager, Assembly-CSharp
+      - m_Target: {fileID: 1593272837}
+        m_TargetAssemblyTypeName: CannonSceneManager, Assembly-CSharp
         m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
