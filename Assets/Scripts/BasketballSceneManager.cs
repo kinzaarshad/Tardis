@@ -11,10 +11,11 @@ public class BasketballSceneManager : MonoBehaviour
 
     private float[] gravity = {10.44f, 8.87f, 11.15f, 274f, 274f};
 
-    
+
     public Button infoButton;
     public DOTweenAnimation doTweenAnimation;
-   
+    public GameObject TutorialPanel;
+
     private bool showingInfo;
 
     enum Planets
@@ -36,10 +37,13 @@ public class BasketballSceneManager : MonoBehaviour
         Vector3 temp = Physics.gravity;
         temp.y = -gravity[ind];
         Physics.gravity = temp;
-        
+
         showingInfo = false;
+
+        if (PlayerPrefs.GetInt("BasketballTutorialShown", 0).Equals(0))
+            ShowTutorial();
     }
-    
+
     public void ShowInfo()
     {
         doTweenAnimation.DOPlayForward();
@@ -52,6 +56,14 @@ public class BasketballSceneManager : MonoBehaviour
         doTweenAnimation.DOPlayBackwards();
         infoButton.onClick.RemoveAllListeners();
         infoButton.onClick.AddListener(ShowInfo);
+    }
+
+    void ShowTutorial() => TutorialPanel.SetActive(true);
+    
+    void HideTutorial()
+    {
+        TutorialPanel.SetActive(false);
+        PlayerPrefs.SetInt("BasketballTutorialShown", 1);
     }
 
 

@@ -895,7 +895,6 @@
           <e p="BallBounceSound.cs" t="Include" />
           <e p="BallLauncher.cs" t="Include" />
           <e p="BasketballSceneManager.cs" t="Include" />
-          <e p="BasketballUIManager.cs" t="Include" />
           <e p="CameraRotation.cs" t="Include" />
           <e p="CannonBall.cs" t="Include" />
           <e p="CannonController.cs" t="Include" />

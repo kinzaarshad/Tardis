@@ -43,10 +43,10 @@ public class CannonInterface : MonoBehaviour
 
         //cannon.SetTargetWithSpeed(targetCursor.transform.position, initialFireSpeed, angle);
 
-        if (Input.GetButtonUp("Fire1") && !EventSystem.current.IsPointerOverGameObject())
+        /*if (Input.GetButtonUp("Fire1") && !EventSystem.current.IsPointerOverGameObject())
         {
             cannon.Fire();
-        }
+        }*/
 
         timeOfFlightText.text =
             Mathf.Clamp(cannon.lastShotTimeOfFlight - (Time.time - cannon.lastShotTime), 0, float.MaxValue)
