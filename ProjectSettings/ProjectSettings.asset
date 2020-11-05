@@ -171,7 +171,7 @@ PlayerSettings:
   applicationIdentifier: {}
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -250,7 +250,7 @@ PlayerSettings:
   AndroidKeystoreName: '{inproject}: user.keystore'
   AndroidKeyaliasName: css
   AndroidBuildApkPerCpuArchitecture: 0
-  AndroidTVCompatibility: 1
+  AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
   androidEnableBanner: 1
@@ -646,18 +646,18 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: EASY_MOBILE;EASY_MOBILE_PRO
-    4: EASY_MOBILE;EASY_MOBILE_PRO
-    7: EASY_MOBILE;EASY_MOBILE_PRO
-    13: EASY_MOBILE;EASY_MOBILE_PRO
-    14: EASY_MOBILE;EASY_MOBILE_PRO
-    19: EASY_MOBILE;EASY_MOBILE_PRO
-    21: EASY_MOBILE;EASY_MOBILE_PRO
-    25: EASY_MOBILE;EASY_MOBILE_PRO
-    27: EASY_MOBILE;EASY_MOBILE_PRO
-    28: EASY_MOBILE;EASY_MOBILE_PRO
-    29: EASY_MOBILE;EASY_MOBILE_PRO
-    30: EASY_MOBILE;EASY_MOBILE_PRO
+    1: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    4: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    7: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    13: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    14: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    19: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    21: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    25: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    27: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    28: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    29: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
+    30: EASY_MOBILE;EASY_MOBILE_PRO;EM_ADMOB;EM_UNITY_ADS;UNITY_MONETIZATION
   platformArchitecture: {}
   scriptingBackend:
     Android: 0
@@ -736,7 +736,7 @@ PlayerSettings:
     Collab: 0
     Game Performance: 0
     Purchasing: 0
-    Unity Ads: 0
+    Unity Ads: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 

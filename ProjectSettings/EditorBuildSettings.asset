@@ -15,39 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CannonScene.unity
     guid: 529787dfeb1b57440a7c531ffb3bc24b
   - enabled: 1
-    path: Assets/Scenes/level1.unity
-    guid: 825084d5635cd5f47ad4dfe7e418ac1f
-  - enabled: 1
-    path: Assets/Scenes/level2.unity
-    guid: ed937ff797e18494ea9ac3fa4dd04394
-  - enabled: 1
-    path: Assets/Scenes/level3.unity
-    guid: 2641844292d68994abc676806a7ba45c
-  - enabled: 1
-    path: Assets/Scenes/level4.unity
-    guid: 90fba0e0dbdea1f459898067736fc245
-  - enabled: 1
-    path: Assets/Scenes/level5.unity
-    guid: e51e1f4788c172f4cbce3bb783cdeecd
-  - enabled: 1
-    path: Assets/Scenes/level6.unity
-    guid: c06ecb3e4078d1e4197b360d07e2ad8e
-  - enabled: 1
-    path: Assets/Scenes/level7.unity
-    guid: b48bc9b82ea6f1e458ad81e400cfcb6d
-  - enabled: 1
-    path: Assets/Scenes/level8.unity
-    guid: e2cde22cb90e45e4ba135d7366d9e914
-  - enabled: 1
-    path: Assets/Scenes/level9.unity
-    guid: 525ef093ac2826848b7095011274acf4
-  - enabled: 1
-    path: Assets/Scenes/level10.unity
-    guid: a8cb08c813c08404786b2726fededf0b
-  - enabled: 1
-    path: Assets/Scenes/BasketballScene.unity
-    guid: a7f386f60b1d35e419742c0e885ea984
-  - enabled: 1
     path: Assets/Scenes/BasketbalTutoriallScene.unity
     guid: 7eda4dea6fc9c6249a3998d8a6e51cb0
   m_configObjects: {}

@@ -9,7 +9,7 @@ public class BasketballSceneManager : MonoBehaviour
 {
     public Material[] planetMaterials;
 
-    private float[] gravity = {10.44f, 8.87f, 11.15f, 274f, 274f};
+    private float[] gravity = {10.44f, 8.87f, 11.15f, 0.62f, 1.62f};
 
 
     public Button infoButton;
@@ -23,8 +23,8 @@ public class BasketballSceneManager : MonoBehaviour
         Saturn = 5,
         Uranus = 6,
         Neptune = 7,
-        PlanetX = 8,
-        Sun = 9
+        Pluto = 8,
+        Moon = 9
     }
 
     // Start is called before the first frame update
