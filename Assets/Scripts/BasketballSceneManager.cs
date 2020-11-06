@@ -60,10 +60,10 @@ public class BasketballSceneManager : MonoBehaviour
 
     void ShowTutorial() => TutorialPanel.SetActive(true);
     
-    void HideTutorial()
+    public void HideTutorial()
     {
         TutorialPanel.SetActive(false);
-        PlayerPrefs.SetInt("BasketballTutorialShown", 1);
+//        PlayerPrefs.SetInt("BasketballTutorialShown", 1);
     }
 
 

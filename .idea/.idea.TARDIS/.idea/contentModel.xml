@@ -1075,6 +1075,9 @@
           <e p="BallBounceSound.cs" t="Include" />
           <e p="BallLauncher.cs" t="Include" />
           <e p="BasketballSceneManager.cs" t="Include" />
+          <e p="Camera" t="Include">
+            <e p="TouchCamera.cs" t="Include" />
+          </e>
           <e p="CameraRotation.cs" t="Include" />
           <e p="CannonBall.cs" t="Include" />
           <e p="CannonController.cs" t="Include" />
@@ -1108,6 +1111,7 @@
           <e p="ScoreKeeper.cs" t="Include" />
           <e p="scrollhelp.cs" t="Include" />
           <e p="SecondaryTrigger.cs" t="Include" />
+          <e p="SkipBasketballTutorialScript.cs" t="Include" />
           <e p="SkyCamera.cs" t="Include" />
           <e p="TextTagParser.cs" t="Include" />
           <e p="TextTyper.cs" t="Include" />

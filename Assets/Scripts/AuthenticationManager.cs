@@ -15,7 +15,7 @@ public class AuthenticationManager : MonoBehaviour
 {
     public static AuthenticationManager Instance { get; set; }
 
-//    public TextMeshProUGUI infoText;
+    public TextMeshProUGUI infoText;
     public string webClientId = "236921651333-gilu5v1eol1h2u2mj60v18udctt9mef2.apps.googleusercontent.com";
     public GameObject loginButtons;
 
@@ -289,7 +289,7 @@ public class AuthenticationManager : MonoBehaviour
 //        if (!GoogleSignIn.Configuration.AccountName.Equals(null))
 //            SignOutFromGoogle();
 
-        var permissions = new List<string>() {"public_profile", "email", "user_friends"};
+        var permissions = new List<string>() {"public_profile", "email"};
         FB.LogInWithReadPermissions(permissions, LoginCallback);
     }
 
@@ -297,15 +297,15 @@ public class AuthenticationManager : MonoBehaviour
     {
         if (result.Error != null)
         {
-//            infoText.text = "Error Response:\n" + result.Error;
+            infoText.text = "Error Response:\n" + result.Error;
         }
         else if (!FB.IsLoggedIn)
         {
-//            infoText.text = "Login cancelled by Player";
+            infoText.text = "Login cancelled by Player";
         }
         else
         {
-//            infoText.text = "Login was successful!";
+            infoText.text = "Login was successful!";
             FB.API("/me?fields=first_name", HttpMethod.GET, LoginCallback2);
         }
     }
@@ -314,11 +314,11 @@ public class AuthenticationManager : MonoBehaviour
     {
         if (result.Error != null)
         {
-//            infoText.text = "Error Response:\n" + result.Error;
+            infoText.text = "Error Response:\n" + result.Error;
         }
         else if (!FB.IsLoggedIn)
         {
-//            infoText.text = "Login cancelled by Player";
+            infoText.text = "Login cancelled by Player";
         }
         else
         {
@@ -329,12 +329,12 @@ public class AuthenticationManager : MonoBehaviour
             FirebaseUser newUser = auth.CurrentUser;
             if (newUser != null)
             {
-//                infoText.text = "User signed in successfully: " + newUser.DisplayName + ", " + newUser.UserId;
+                infoText.text = "User signed in successfully: " + newUser.DisplayName + ", " + newUser.UserId;
                 loginButtons.SetActive(false);
             }
             else
             {
-//                infoText.text = "Failed to fetch data";
+                infoText.text = "Failed to fetch data";
             }
 
 //            print("your name is: " + fbname);
@@ -349,18 +349,18 @@ public class AuthenticationManager : MonoBehaviour
         {
             if (task.IsCanceled)
             {
-//                infoText.text = "SignInWithCredentialAsync was canceled.";
+                infoText.text = "SignInWithCredentialAsync was canceled.";
                 return;
             }
 
             if (task.IsFaulted)
             {
-//                infoText.text = "SignInWithCredentialAsync encountered an error: " + task.Exception;
+                infoText.text = "SignInWithCredentialAsync encountered an error: " + task.Exception;
                 return;
             }
 
-//            FirebaseUser newUser = task.Result;
-//            infoText.text = "User signed in successfully: " + newUser.DisplayName + ", " + newUser.UserId;
+            FirebaseUser newUser = task.Result;
+            infoText.text = "User signed in successfully: " + newUser.DisplayName + ", " + newUser.UserId;
         });
     }
 
@@ -387,14 +387,14 @@ public class AuthenticationManager : MonoBehaviour
         {
             string name = "" + result.ResultDictionary["first_name"];
             //  FB_userName.text = name;
-//            infoText.text = name;
+            infoText.text = name;
 
             Debug.Log("" + name);
         }
         else
         {
             Debug.Log(result.Error);
-//            infoText.text = result.Error;
+            infoText.text = result.Error;
         }
     }
 

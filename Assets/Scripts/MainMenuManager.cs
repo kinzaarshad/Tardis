@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         AdsManager.ShowBanner();
+        AdsManager.ShowInterstitial();
     }
 
     // Update is called once per frame

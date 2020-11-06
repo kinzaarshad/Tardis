@@ -54,5 +54,7 @@ public class CannonSceneManager : MonoBehaviour
         infoButton.onClick.RemoveAllListeners();
         infoButton.onClick.AddListener(ShowInfo);
     }
+    
+    
 
 }
