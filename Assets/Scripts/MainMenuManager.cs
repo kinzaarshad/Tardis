@@ -19,6 +19,7 @@ public class MainMenuManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
             LoadLevel(0);
 #endif
+        AdsManager.ShowInterstitial();
     }
 
     public void LoadLevel(int level)

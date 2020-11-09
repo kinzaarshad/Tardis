@@ -288,7 +288,7 @@ public class AuthenticationManager : MonoBehaviour
     {
 //        if (!GoogleSignIn.Configuration.AccountName.Equals(null))
 //            SignOutFromGoogle();
-
+//        var permissions = new List<string>() {"email", "user_birthday", "user_friends", "public_profile"};
         var permissions = new List<string>() {"public_profile", "email"};
         FB.LogInWithReadPermissions(permissions, LoginCallback);
     }
@@ -306,7 +306,8 @@ public class AuthenticationManager : MonoBehaviour
         else
         {
             infoText.text = "Login was successful!";
-            FB.API("/me?fields=first_name", HttpMethod.GET, LoginCallback2);
+            loginButtons.SetActive(false);
+            FB.API("/me?fields=id,name,email", HttpMethod.GET, LoginCallback2);
         }
     }
 
@@ -355,7 +356,7 @@ public class AuthenticationManager : MonoBehaviour
 
             if (task.IsFaulted)
             {
-                infoText.text = "SignInWithCredentialAsync encountered an error: " + task.Exception;
+                infoText.text += "SignInWithCredentialAsync encountered an error: " + task.Exception;
                 return;
             }
 

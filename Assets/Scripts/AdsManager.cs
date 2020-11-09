@@ -14,7 +14,7 @@ public class AdsManager : MonoBehaviour
 
     public static void ShowBanner()
     {
-        Advertising.ShowBannerAd(BannerAdPosition.Bottom);
+        Advertising.ShowBannerAd(BannerAdPosition.Bottom, BannerAdSize.Leaderboard);
     }
 
     public static void ShowInterstitial()

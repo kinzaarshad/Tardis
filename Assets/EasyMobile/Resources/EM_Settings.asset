@@ -56,14 +56,14 @@ MonoBehaviour:
         mIosId: 
         mAndroidId: 
       mDefaultBannerAdId:
-        mIosId: ca-app-pub-2299714383253911/1109795321
-        mAndroidId: 
+        mIosId: 
+        mAndroidId: ca-app-pub-3940256099942544/6300978111
       mDefaultInterstitialAdId:
-        mIosId: ca-app-pub-2299714383253911/8805943207
-        mAndroidId: 
+        mIosId: 
+        mAndroidId: ca-app-pub-3940256099942544/1033173712
       mDefaultRewardedAdId:
-        mIosId: ca-app-pub-2299714383253911/9028153105
-        mAndroidId: 
+        mIosId: 
+        mAndroidId: ca-app-pub-3940256099942544/5224354917
       mCustomBannerAdIds:
         keys: []
         values: []
