@@ -45,6 +45,9 @@ public class CannonBall : MonoBehaviour
 
             //SceneManager.LoadScene(1);
         }*/
+        
+        if(collision.collider.CompareTag("CannonTarget"))
+           CannonTargetManager.Instance.AssignRandomPosition();
 
     }
 }

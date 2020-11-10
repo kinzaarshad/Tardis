@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,6 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         AdsManager.ShowBanner();
-        AdsManager.ShowInterstitial();
     }
 
     // Update is called once per frame
@@ -19,12 +19,17 @@ public class MainMenuManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
             LoadLevel(0);
 #endif
-        AdsManager.ShowInterstitial();
     }
 
     public void LoadLevel(int level)
     {
-        SceneManager.LoadScene(level);
+        var planet = (Planets) level;
+        PlayerPrefs.SetString("CurrentPlanet", planet.ToString());
+        AdsManager.ShowInterstitial();
+        if (level < 5)
+            SceneManager.LoadScene(2);
+        else
+            SceneManager.LoadScene(3);
     }
 
     public void Quit() =>

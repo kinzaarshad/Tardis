@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CannonSceneManager : MonoBehaviour
@@ -14,33 +15,33 @@ public class CannonSceneManager : MonoBehaviour
 
     public Button infoButton;
     public DOTweenAnimation doTweenAnimation;
-   
+    public GameObject TutorialPanel;
+
     private bool showingInfo;
-    enum Planets
-    {
-        Mercury = 0,
-        Venus = 1,
-        Earth = 2,
-        Mars = 3,
-        Jupiter = 4
-    }
+
+    public static CannonSceneManager Instance;
 
     // Start is called before the first frame update
     void Awake()
     {
-        var var = PlayerPrefs.GetString("CurrentPlanet", "Mars");
+        if (Instance == null)
+            Instance = this;
+
+        var var = PlayerPrefs.GetString("CurrentPlanet", "Mercury");
         var ind = (int) Enum.Parse(typeof(Planets), var);
         Terrain.GetComponent<Renderer>().material = planetMaterials[ind];
         Vector3 temp = Physics.gravity;
         temp.y = -gravity[ind];
         Physics.gravity = temp;
+
+        showingInfo = false;
+
+        if (PlayerPrefs.GetInt("CannonTutorialShown", 0).Equals(0))
+            ShowTutorial();
+
+        AdsManager.ShowBanner();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-    
     public void ShowInfo()
     {
         doTweenAnimation.DOPlayForward();
@@ -54,7 +55,18 @@ public class CannonSceneManager : MonoBehaviour
         infoButton.onClick.RemoveAllListeners();
         infoButton.onClick.AddListener(ShowInfo);
     }
-    
-    
 
+    void ShowTutorial() => TutorialPanel.SetActive(true);
+
+    public void HideTutorial()
+    {
+        Destroy(TutorialPanel);
+//        PlayerPrefs.SetInt("CannonTutorialShown", 1);
+    }
+
+    public void GoBack()
+    {
+        AdsManager.ShowRewarded();
+        SceneManager.LoadSceneAsync("Menu");
+    }
 }

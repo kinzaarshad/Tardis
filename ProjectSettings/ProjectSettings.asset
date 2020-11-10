@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Tardis
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -39,7 +39,9 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 21300000, guid: 89e298026a616cd479cdb3116d9b1a3b, type: 3}
+    duration: 3
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -266,7 +268,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 4136fa222e2d7204492cb7c23c3dbcc3, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -646,18 +655,18 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    4: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    7: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    13: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    14: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    19: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    21: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    25: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    27: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    28: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    29: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
-    30: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION
+    1: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    4: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    7: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    13: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    14: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    19: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    21: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    25: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    27: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    28: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    29: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
+    30: EASY_MOBILE;EASY_MOBILE_PRO;EM_UNITY_ADS;EM_ADMOB;UNITY_MONETIZATION;EM_UIAP
   platformArchitecture: {}
   scriptingBackend:
     Android: 0
@@ -670,7 +679,8 @@ PlayerSettings:
   scriptingRuntimeVersion: 1
   gcIncremental: 0
   gcWBarrierValidation: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Android: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: ProjectileShooting
@@ -735,7 +745,7 @@ PlayerSettings:
     Build: 0
     Collab: 0
     Game Performance: 0
-    Purchasing: 0
+    Purchasing: 1
     Unity Ads: 1
   luminIcon:
     m_Name: 

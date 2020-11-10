@@ -8,6 +8,7 @@ public class AdsManager : MonoBehaviour
 {
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         if (!RuntimeManager.IsInitialized())
             RuntimeManager.Init();
     }

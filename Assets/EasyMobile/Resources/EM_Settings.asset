@@ -21,7 +21,7 @@ MonoBehaviour:
       interstitialAdNetwork: 0
       rewardedAdNetwork: 0
     mAndroidDefaultAdNetworks:
-      bannerAdNetwork: 2
+      bannerAdNetwork: 10
       interstitialAdNetwork: 2
       rewardedAdNetwork: 10
     mAdColony:
@@ -57,13 +57,13 @@ MonoBehaviour:
         mAndroidId: 
       mDefaultBannerAdId:
         mIosId: 
-        mAndroidId: ca-app-pub-3940256099942544/6300978111
+        mAndroidId: ca-app-pub-2299714383253911/1109795321
       mDefaultInterstitialAdId:
         mIosId: 
-        mAndroidId: ca-app-pub-3940256099942544/1033173712
+        mAndroidId: ca-app-pub-2299714383253911/8805943207
       mDefaultRewardedAdId:
         mIosId: 
-        mAndroidId: ca-app-pub-3940256099942544/5224354917
+        mAndroidId: ca-app-pub-2299714383253911/9028153105
       mCustomBannerAdIds:
         keys: []
         values: []
@@ -240,9 +240,16 @@ MonoBehaviour:
     mSimulateAppleAskToBuy: 0
     mInterceptApplePromotionalPurchases: 0
     mEnableAmazonSandboxTesting: 0
-    mValidateAppleReceipt: 1
+    mValidateAppleReceipt: 0
     mValidateGooglePlayReceipt: 1
-    mProducts: []
+    mProducts:
+    - _name: Remove Ads
+      _type: 1
+      _id: com.css.tardis.remove_ads
+      _price: 1.99
+      _description: Remove Ads
+      _storeSpecificIds: []
+      _isEditingAdvanced: 1
   mNotificationSettings:
     mAutoInit: 1
     mAutoInitDelay: 0
@@ -335,7 +342,7 @@ MonoBehaviour:
       - mKey: NSContactsUsageDescription
         mValue: '[Your usage description]'
   mIsAdModuleEnable: 1
-  mIsIAPModuleEnable: 0
+  mIsIAPModuleEnable: 1
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0

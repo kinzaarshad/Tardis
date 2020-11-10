@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SkyCamera : MonoBehaviour
 {
@@ -33,6 +35,8 @@ public class SkyCamera : MonoBehaviour
 
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject() || IsPointerOverUIObject()) return;
+
         float zoomInput = -Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity;
 
         currentDistance = Mathf.Clamp(currentDistance + zoomInput, minDistance, maxDistance);
@@ -51,5 +55,19 @@ public class SkyCamera : MonoBehaviour
         position = temp;
 
         transform.position = -transform.forward * currentDistance + position;
+    }
+    
+    public bool IsPointerOverUIObject()
+    {
+        if (EventSystem.current == null) return false;
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+#if UNITY_EDITOR
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+#elif !UNITY_EDITOR
+        eventDataCurrentPosition.position = new Vector2(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+#endif
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0 || EventSystem.current.currentSelectedGameObject != null;
     }
 }

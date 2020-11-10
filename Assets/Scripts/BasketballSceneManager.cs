@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BasketballSceneManager : MonoBehaviour
@@ -18,19 +19,10 @@ public class BasketballSceneManager : MonoBehaviour
 
     private bool showingInfo;
 
-    enum Planets
-    {
-        Saturn = 5,
-        Uranus = 6,
-        Neptune = 7,
-        Pluto = 8,
-        Moon = 9
-    }
-
     // Start is called before the first frame update
     void Awake()
     {
-        var var = PlayerPrefs.GetString("CurrentPlanet", "Uranus");
+        var var = PlayerPrefs.GetString("CurrentPlanet", "Saturn");
         var ind = (int) Enum.Parse(typeof(Planets), var);
         ind -= 5;
         RenderSettings.skybox = planetMaterials[ind];
@@ -42,6 +34,8 @@ public class BasketballSceneManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("BasketballTutorialShown", 0).Equals(0))
             ShowTutorial();
+        
+        AdsManager.ShowBanner();
     }
 
     public void ShowInfo()
@@ -62,13 +56,14 @@ public class BasketballSceneManager : MonoBehaviour
     
     public void HideTutorial()
     {
-        TutorialPanel.SetActive(false);
+        Destroy(TutorialPanel);
 //        PlayerPrefs.SetInt("BasketballTutorialShown", 1);
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void GoBack()
     {
+        AdsManager.ShowRewarded();
+        SceneManager.LoadSceneAsync("Menu");
     }
+    
 }

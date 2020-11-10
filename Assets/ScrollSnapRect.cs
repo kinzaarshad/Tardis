@@ -148,7 +148,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         if (_horizontal)
         {
             // screen width in pixels of scrollrect window
-            width = (int) _scrollRectRect.rect.width;
+            width = (int) _scrollRectRect.rect.width * 2;
             // center position of all pages
             offsetX = width / 2;
             // total width
@@ -165,7 +165,7 @@ public class ScrollSnapRect : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         }
 
         // set width of container
-        Vector2 newSize = new Vector2(containerWidth, containerHeight);
+        Vector2 newSize = new Vector2(containerWidth * 2f, containerHeight);
         _container.sizeDelta = newSize;
         Vector2 newPosition = new Vector2(containerWidth / 2, containerHeight / 2);
         _container.anchoredPosition = newPosition;

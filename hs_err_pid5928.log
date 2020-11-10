@@ -1,0 +1,257 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:272), pid=5928, tid=0x00000000000024fc
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_271-b09) (build 1.8.0_271-b09)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.271-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000027731b20800):  JavaThread "main" [_thread_in_vm, id=9468, stack(0x000000e000c00000,0x000000e000d00000)]
+
+Stack: [0x000000e000c00000,0x000000e000d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x33f6c9]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~RuntimeStub::counter_overflow Runtime1 stub
+J 1702 C1 com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.scanContent(Lcom/sun/org/apache/xerces/internal/xni/XMLString;)I (690 bytes) @ 0x00000277339eb30c [0x00000277339ea080+0x128c]
+J 1084 C1 com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next()I (2395 bytes) @ 0x00000277337f5274 [0x00000277337f47c0+0xab4]
+J 1080 C1 com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next()I (39 bytes) @ 0x00000277337ec834 [0x00000277337ec5a0+0x294]
+j  com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Z)Z+308
+j  com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Z)Z+123
+j  com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;)V+29
+j  com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;)V+76
+j  com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Lorg/xml/sax/InputSource;)V+43
+j  com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Lorg/xml/sax/InputSource;)V+53
+j  org.xml.sax.helpers.XMLFilterImpl.parse(Lorg/xml/sax/InputSource;)V+9
+j  com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(Lorg/xml/sax/XMLReader;Lorg/xml/sax/InputSource;Lcom/sun/xml/bind/v2/runtime/JaxBeanInfo;)Ljava/lang/Object;+31
+j  com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(Lorg/xml/sax/XMLReader;Lorg/xml/sax/InputSource;)Ljava/lang/Object;+4
+j  javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Ljavax/xml/transform/sax/SAXSource;)Ljava/lang/Object;+20
+j  javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Ljavax/xml/transform/Source;)Ljava/lang/Object;+31
+j  com.android.repository.impl.meta.SchemaModuleUtil.unmarshal(Ljava/io/InputStream;Ljava/util/Collection;ZLcom/android/repository/api/ProgressIndicator;)Ljava/lang/Object;+21
+j  com.android.repository.impl.manager.RemoteRepoLoaderImpl.processSource(Lcom/android/repository/api/RepositorySource;Ljava/io/InputStream;Lcom/android/repository/api/Downloader;Lcom/android/repository/api/SettingsController;Ljava/util/Map;Lcom/android/repository/api/ProgressIndicator;D)V+30
+j  com.android.repository.impl.manager.RemoteRepoLoaderImpl.fetchPackages(Lcom/android/repository/api/ProgressIndicator;Lcom/android/repository/api/Downloader;Lcom/android/repository/api/SettingsController;)Ljava/util/Map;+389
+j  com.android.repository.impl.manager.RepoManagerImpl$LoadTask.run(Lcom/android/repository/api/ProgressIndicator;Lcom/android/repository/api/ProgressRunner;)V+637
+j  com.android.repository.api.RepoManager$DummyProgressRunner.runSyncWithProgress(Lcom/android/repository/api/ProgressRunner$ProgressRunnable;)V+6
+j  com.android.repository.impl.manager.RepoManagerImpl.load(JLjava/util/List;Ljava/util/List;Ljava/util/List;Lcom/android/repository/api/ProgressRunner;Lcom/android/repository/api/Downloader;Lcom/android/repository/api/SettingsController;Z)V+218
+j  com.android.repository.api.RepoManager.loadSynchronously(JLcom/android/repository/api/ProgressIndicator;Lcom/android/repository/api/Downloader;Lcom/android/repository/api/SettingsController;)Z+37
+j  com.android.sdklib.tool.sdkmanager.ListAction.execute(Lcom/android/repository/api/ProgressIndicator;)V+33
+j  com.android.sdklib.tool.sdkmanager.SdkManagerCli.run(Lcom/android/repository/api/ProgressIndicator;)V+23
+j  com.android.sdklib.tool.sdkmanager.SdkManagerCli.main(Ljava/util/List;)V+168
+j  com.android.sdklib.tool.sdkmanager.SdkManagerCli.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000002774a8bd800 JavaThread "Service Thread" daemon [_thread_blocked, id=26268, stack(0x000000e001900000,0x000000e001a00000)]
+  0x000002774a83a800 JavaThread "C1 CompilerThread2" daemon [_thread_in_native, id=15568, stack(0x000000e001800000,0x000000e001900000)]
+  0x000002774a831800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=17732, stack(0x000000e001700000,0x000000e001800000)]
+  0x000002774a82e800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=248, stack(0x000000e001600000,0x000000e001700000)]
+  0x000002774a82b800 JavaThread "Attach Listener" daemon [_thread_blocked, id=9720, stack(0x000000e001500000,0x000000e001600000)]
+  0x000002774a82a000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=18540, stack(0x000000e001400000,0x000000e001500000)]
+  0x000002774a0e8800 JavaThread "Finalizer" daemon [_thread_blocked, id=24160, stack(0x000000e001300000,0x000000e001400000)]
+  0x000002774a0df000 JavaThread "Reference Handler" daemon [_thread_blocked, id=25248, stack(0x000000e001200000,0x000000e001300000)]
+=>0x0000027731b20800 JavaThread "main" [_thread_in_vm, id=9468, stack(0x000000e000c00000,0x000000e000d00000)]
+
+Other Threads:
+  0x000002774a7f2000 VMThread [stack: 0x000000e001100000,0x000000e001200000] [id=17912]
+  0x000002774a8df800 WatcherThread [stack: 0x000000e001a00000,0x000000e001b00000] [id=29048]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000700a00000, size: 3062 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 57344K, used 50038K [0x0000000780380000, 0x0000000784380000, 0x00000007c0000000)
+  eden space 49152K, 91% used [0x0000000780380000,0x0000000782f59190,0x0000000783380000)
+  from space 8192K, 62% used [0x0000000783380000,0x00000007838848b8,0x0000000783b80000)
+  to   space 8192K, 0% used [0x0000000783b80000,0x0000000783b80000,0x0000000784380000)
+ ParOldGen       total 131072K, used 24K [0x0000000700a00000, 0x0000000708a00000, 0x0000000780380000)
+  object space 131072K, 0% used [0x0000000700a00000,0x0000000700a06000,0x0000000708a00000)
+ Metaspace       used 12360K, capacity 12648K, committed 12928K, reserved 1060864K
+  class space    used 1499K, capacity 1592K, committed 1664K, reserved 1048576K
+
+Card table byte_map: [0x0000027742800000,0x0000027742e00000] byte_map_base: 0x000002773effb000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000639a7fe0
+ Begin Bits: [0x0000027743200000, 0x00000277461d8000)
+ End Bits:   [0x00000277461d8000, 0x00000277491b0000)
+
+Polling page: 0x0000027731c60000
+
+CodeCache: size=245760Kb used=6087Kb max_used=6087Kb free=239672Kb
+ bounds [0x0000027733440000, 0x0000027733a40000, 0x0000027742440000]
+ total_blobs=2155 nmethods=1785 adapters=282
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 5.890 Thread 0x000002774a83a800 nmethod 1780 0x0000027733a2dc90 code [0x0000027733a2de60, 0x0000027733a2e410]
+Event: 5.893 Thread 0x000002774a83a800 1787       3       com.sun.xml.bind.WhiteSpaceProcessor::trim (85 bytes)
+Event: 5.893 Thread 0x000002774a83a800 nmethod 1787 0x0000027733a30410 code [0x0000027733a305e0, 0x0000027733a30d20]
+Event: 5.893 Thread 0x000002774a83a800 1788   !   3       com.sun.xml.bind.v2.ClassFactory::create (128 bytes)
+Event: 5.894 Thread 0x000002774a83a800 nmethod 1788 0x0000027733a30f10 code [0x0000027733a31300, 0x0000027733a336b0]
+Event: 5.894 Thread 0x000002774a83a800 1790   !   3       com.sun.xml.bind.v2.runtime.unmarshaller.TextLoader::text (33 bytes)
+Event: 5.894 Thread 0x000002774a83a800 nmethod 1790 0x0000027733a34610 code [0x0000027733a347e0, 0x0000027733a34f80]
+Event: 5.895 Thread 0x000002774a83a800 1789       3       javax.xml.bind.annotation.adapters.CollapsedStringAdapter::unmarshal (9 bytes)
+Event: 5.895 Thread 0x000002774a83a800 nmethod 1789 0x0000027733a2d7d0 code [0x0000027733a2d940, 0x0000027733a2dbd0]
+Event: 5.896 Thread 0x000002774a83a800 1791   !   3       com.sun.xml.bind.v2.runtime.reflect.Accessor$GetterSetterReflection::set (58 bytes)
+
+GC Heap History (2 events):
+Event: 4.090 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 57344K, used 49152K [0x0000000780380000, 0x0000000784380000, 0x00000007c0000000)
+  eden space 49152K, 100% used [0x0000000780380000,0x0000000783380000,0x0000000783380000)
+  from space 8192K, 0% used [0x0000000783b80000,0x0000000783b80000,0x0000000784380000)
+  to   space 8192K, 0% used [0x0000000783380000,0x0000000783380000,0x0000000783b80000)
+ ParOldGen       total 131072K, used 0K [0x0000000700a00000, 0x0000000708a00000, 0x0000000780380000)
+  object space 131072K, 0% used [0x0000000700a00000,0x0000000700a00000,0x0000000708a00000)
+ Metaspace       used 10830K, capacity 11118K, committed 11264K, reserved 1058816K
+  class space    used 1348K, capacity 1445K, committed 1536K, reserved 1048576K
+Event: 4.127 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 57344K, used 5138K [0x0000000780380000, 0x0000000784380000, 0x00000007c0000000)
+  eden space 49152K, 0% used [0x0000000780380000,0x0000000780380000,0x0000000783380000)
+  from space 8192K, 62% used [0x0000000783380000,0x00000007838848b8,0x0000000783b80000)
+  to   space 8192K, 0% used [0x0000000783b80000,0x0000000783b80000,0x0000000784380000)
+ ParOldGen       total 131072K, used 24K [0x0000000700a00000, 0x0000000708a00000, 0x0000000780380000)
+  object space 131072K, 0% used [0x0000000700a00000,0x0000000700a06000,0x0000000708a00000)
+ Metaspace       used 10830K, capacity 11118K, committed 11264K, reserved 1058816K
+  class space    used 1348K, capacity 1445K, committed 1536K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 5.842 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000027733896ef4 method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.checkBeforeLoad(Lcom/sun/xml/internal/stream/Entity$ScannedEntity;II)I @ 18
+Event: 5.842 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000002773381352c method=com.sun.org.apache.xerces.internal.impl.io.UTF8Reader.read([CII)I @ 131
+Event: 5.843 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000277337ad210 method=java.util.regex.Pattern$BitClass.isSatisfiedBy(I)Z @ 13
+Event: 5.845 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000277337b4d80 method=java.util.regex.Pattern$NotBehind.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 128
+Event: 5.846 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000277337f16cc method=com.sun.org.apache.xerces.internal.impl.io.UTF8Reader.read([CII)I @ 131
+Event: 5.846 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000277337a79cc method=java.util.regex.Pattern$Ctype.isSatisfiedBy(I)Z @ 4
+Event: 5.850 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000002773384f440 method=java.util.regex.Matcher.find()Z @ 34
+Event: 5.856 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000277339690b4 method=java.util.regex.Pattern$LastNode.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 5
+Event: 5.856 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000277339b0a74 method=java.util.regex.Pattern$LastNode.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 5
+Event: 5.856 Thread 0x0000027731b20800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000277337eb62c method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.scanContent(Lcom/sun/org/apache/xerces/internal/xni/XMLString;)I @ 418
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 5.153 Thread 0x0000027731b20800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000007807edf28) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 5.153 Thread 0x0000027731b20800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000007807ef980) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 5.153 Thread 0x0000027731b20800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000007807eff20) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 5.153 Thread 0x0000027731b20800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000007807f0998) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 5.153 Thread 0x0000027731b20800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000007807f0f70) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 5.502 Thread 0x0000027731b20800 Exception <a 'java/lang/ClassNotFoundException': com/sun/org/glassfish/hk2/osgiresourcelocator/ServiceLoader> (0x0000000781e4dba8) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\classfile\systemDictionary.
+Event: 5.523 Thread 0x0000027731b20800 Exception <a 'sun/nio/fs/WindowsException'> (0x0000000781f605d0) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 5.523 Thread 0x0000027731b20800 Exception <a 'sun/nio/fs/WindowsException'> (0x0000000781f60a98) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 5.831 Thread 0x0000027731b20800 Exception <a 'java/lang/ClassNotFoundException': com/sun/org/glassfish/hk2/osgiresourcelocator/ServiceLoader> (0x0000000781fa5e60) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\classfile\systemDictionary.
+Event: 5.860 Thread 0x0000027731b20800 Exception <a 'java/lang/ClassNotFoundException': com/sun/org/glassfish/hk2/osgiresourcelocator/ServiceLoader> (0x0000000782992e68) thrown at [C:\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u271\605\hotspot\src\share\vm\classfile\systemDictionary.
+
+Events (10 events):
+Event: 5.880 Thread 0x0000027731b20800 DEOPT PACKING pc=0x00000277339e4085 sp=0x000000e000cfe7a0
+Event: 5.880 Thread 0x0000027731b20800 DEOPT UNPACKING pc=0x0000027733487898 sp=0x000000e000cfe548 mode 0
+Event: 5.881 Thread 0x0000027731b20800 DEOPT PACKING pc=0x00000277339eb30c sp=0x000000e000cfeaa0
+Event: 5.881 Thread 0x0000027731b20800 DEOPT UNPACKING pc=0x0000027733487898 sp=0x000000e000cfe7e0 mode 0
+Event: 5.882 Thread 0x0000027731b20800 DEOPT PACKING pc=0x00000277339e4085 sp=0x000000e000cfe690
+Event: 5.882 Thread 0x0000027731b20800 DEOPT UNPACKING pc=0x0000027733487898 sp=0x000000e000cfe438 mode 0
+Event: 5.892 Thread 0x0000027731b20800 DEOPT PACKING pc=0x00000277339eb30c sp=0x000000e000cfeaa0
+Event: 5.892 Thread 0x0000027731b20800 DEOPT UNPACKING pc=0x0000027733487898 sp=0x000000e000cfe7e0 mode 0
+Event: 5.894 Thread 0x0000027731b20800 DEOPT PACKING pc=0x00000277339eb30c sp=0x000000e000cfeaa0
+Event: 5.894 Thread 0x0000027731b20800 DEOPT UNPACKING pc=0x0000027733487898 sp=0x000000e000cfe7e0 mode 0
+
+
+Dynamic libraries:
+0x00007ff7c2f10000 - 0x00007ff7c2f57000 	C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe
+0x00007ffffa7d0000 - 0x00007ffffa9c6000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffff9cb0000 - 0x00007ffff9d6d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffff7fa0000 - 0x00007ffff8268000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffff9d70000 - 0x00007ffff9e1a000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffffa680000 - 0x00007ffffa71e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffffa2b0000 - 0x00007ffffa34b000 	C:\Windows\System32\sechost.dll
+0x00007ffff89e0000 - 0x00007ffff8b04000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffff8840000 - 0x00007ffff89e0000 	C:\Windows\System32\USER32.dll
+0x00007ffff7f20000 - 0x00007ffff7f42000 	C:\Windows\System32\win32u.dll
+0x00007ffff8f20000 - 0x00007ffff8f4a000 	C:\Windows\System32\GDI32.dll
+0x00007ffff8380000 - 0x00007ffff8489000 	C:\Windows\System32\gdi32full.dll
+0x00007ffff8670000 - 0x00007ffff870d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffff8740000 - 0x00007ffff8840000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffff1ae0000 - 0x00007ffff1d7b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\COMCTL32.dll
+0x00007ffffa5a0000 - 0x00007ffffa5d0000 	C:\Windows\System32\IMM32.DLL
+0x00007ffff1540000 - 0x00007ffff1555000 	C:\Program Files\Java\jre1.8.0_271\bin\vcruntime140.dll
+0x00007fffd0d70000 - 0x00007fffd0e0b000 	C:\Program Files\Java\jre1.8.0_271\bin\msvcp140.dll
+0x00000000631b0000 - 0x0000000063a1f000 	C:\Program Files\Java\jre1.8.0_271\bin\server\jvm.dll
+0x00007ffffa0c0000 - 0x00007ffffa0c8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffff1f30000 - 0x00007ffff1f57000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffff3150000 - 0x00007ffff315a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007fffec160000 - 0x00007fffec169000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffffa720000 - 0x00007ffffa78b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffff5e90000 - 0x00007ffff5ea2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffff3c70000 - 0x00007ffff3c80000 	C:\Program Files\Java\jre1.8.0_271\bin\verify.dll
+0x00007fffe2450000 - 0x00007fffe247b000 	C:\Program Files\Java\jre1.8.0_271\bin\java.dll
+0x00007fffead00000 - 0x00007fffead18000 	C:\Program Files\Java\jre1.8.0_271\bin\zip.dll
+0x00007ffff9570000 - 0x00007ffff9cb0000 	C:\Windows\System32\SHELL32.dll
+0x00007ffff6090000 - 0x00007ffff6824000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x00007ffff8bc0000 - 0x00007ffff8f15000 	C:\Windows\System32\combase.dll
+0x00007ffff78c0000 - 0x00007ffff78ec000 	C:\Windows\SYSTEM32\Wldp.dll
+0x00007ffffa5d0000 - 0x00007ffffa67e000 	C:\Windows\System32\SHCORE.dll
+0x00007ffffa000000 - 0x00007ffffa055000 	C:\Windows\System32\shlwapi.dll
+0x00007ffff7e50000 - 0x00007ffff7e76000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007fffe7120000 - 0x00007fffe713c000 	C:\Program Files\Java\jre1.8.0_271\bin\net.dll
+0x00007ffff7640000 - 0x00007ffff76aa000 	C:\Windows\system32\mswsock.dll
+0x00007fffe2270000 - 0x00007fffe2283000 	C:\Program Files\Java\jre1.8.0_271\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dcom.android.sdklib.toolsdir=D:\Android\Sdk\cmdline-tools\latest\bin\\.. 
+java_command: com.android.sdklib.tool.sdkmanager.SdkManagerCli --list
+java_class_path (initial): D:\Android\Sdk\cmdline-tools\latest\bin\..\lib\sdkmanager-classpath.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
+CLASSPATH=D:\Android\Sdk\cmdline-tools\latest\bin\..\lib\sdkmanager-classpath.jar
+PATH=C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git LFS;C:\Program Files\Git\cmd;C:\Users\Mustafa\AppData\Local\Microsoft\WindowsApps;C:\Users\Mustafa\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\JetBrains Rider 2019.1.3\bin;;C:\Users\Mustafa\AppData\Local\GitHubDesktop\bin
+USERNAME=Mustafa
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.546)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 12534544k(750708k free), swap 27707532k(544k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.271-b09) for windows-amd64 JRE (1.8.0_271-b09), built on Sep 16 2020 19:14:59 by "" with MS VC++ 15.9 (VS2017)
+
+time: Tue Nov 10 17:51:29 2020
+timezone: Pakistan Standard Time
+elapsed time: 5.978068 seconds (0d 0h 0m 5s)
+

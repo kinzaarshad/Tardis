@@ -268,6 +268,9 @@
               <e p="Template_TapJoyAndroidManifest.xml" t="Include" />
             </e>
           </e>
+          <e p="Generated" t="Include">
+            <e p="EM_IAPConstants.cs" t="Include" />
+          </e>
           <e p="GUISkins" t="Include">
             <e p="Fonts" t="Include">
               <e p="Montserrat" t="Include">
@@ -1067,6 +1070,32 @@
             </e>
             <e p="ScreenshotCompanion.cs" t="Include" />
           </e>
+          <e p="UnityPurchasing" t="Include">
+            <e p="Editor" t="Include">
+              <e p="IAPButtonEditor.cs" t="Include" />
+              <e p="IAPGeneratedCredentials.cs.template" t="Include" />
+            </e>
+            <e p="Generated" t="Include">
+              <e p="AppleTangle.cs" t="Include" />
+              <e p="GooglePlayTangle.cs" t="Include" />
+            </e>
+            <e p="license.txt" t="Include" />
+            <e p="script" t="Include">
+              <e p="CodelessIAPStoreListener.cs" t="Include" />
+              <e p="ComboBox.cs" t="Include" />
+              <e p="Demo" t="Include">
+                <e p="DemoInventory.cs" t="Include" />
+              </e>
+              <e p="IAPButton.cs" t="Include" />
+              <e p="IAPConfigurationHelper.cs" t="Include" />
+              <e p="IAPDemo.cs" t="Include" />
+              <e p="IAPDemoProductUI.cs" t="Include" />
+              <e p="IAPListener.cs" t="Include" />
+              <e p="link.xml" t="Include" />
+              <e p="PurchasingCheck.cs" t="Include" />
+            </e>
+            <e p="third party notices.txt" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="AdsManager.cs" t="Include" />
@@ -1096,6 +1125,7 @@
           <e p="Math3d.cs" t="Include" />
           <e p="open.cs" t="Include" />
           <e p="ParticleMaster.cs" t="Include" />
+          <e p="Planets.cs" t="Include" />
           <e p="PredictionManager.cs" t="Include" />
           <e p="PrimaryTrigger.cs" t="Include" />
           <e p="Projectile.cs" t="Include" />
@@ -1109,6 +1139,7 @@
           <e p="scrollhelp.cs" t="Include" />
           <e p="SecondaryTrigger.cs" t="Include" />
           <e p="SkipBasketballTutorialScript.cs" t="Include" />
+          <e p="SkipCannonTutorialScript.cs" t="Include" />
           <e p="SkyCamera.cs" t="Include" />
           <e p="TextTagParser.cs" t="Include" />
           <e p="TextTyper.cs" t="Include" />

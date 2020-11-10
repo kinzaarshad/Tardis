@@ -15,6 +15,7 @@ public class ScoreKeeper : MonoBehaviour
     public Text Time;
 
     public static ScoreKeeper Instance;
+    public BasketballSceneManager BasketballSceneManager;
 
     void Awake()
     {
@@ -44,6 +45,9 @@ public class ScoreKeeper : MonoBehaviour
 
             float time = (ySpeed + Mathf.Sqrt((ySpeed * ySpeed) + 2 * 10 * 5)) / 10;
             Time.text = "Time=" + time;
+
+            if (score > 4)
+                BasketballSceneManager.GoBack();
         }
     }
 

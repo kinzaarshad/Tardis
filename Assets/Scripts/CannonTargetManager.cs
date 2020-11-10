@@ -1,11 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CannonTargetManager : MonoBehaviour
 {
     private Renderer targetGraphic;
     public Transform arrow;
     public Transform target;
+    public int score = -1;
+
+    public static CannonTargetManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +28,8 @@ public class CannonTargetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (score > 4)
+            CannonSceneManager.Instance.GoBack();
     }
 
     public void AssignRandomPosition()
@@ -29,6 +42,8 @@ public class CannonTargetManager : MonoBehaviour
         target.Translate(new Vector3(distance, 0, distance), Space.Self);
 
         arrow.position = target.position;
+
+        score++;
 
         StartCoroutine(VerticallyAlignTarget());
     }
