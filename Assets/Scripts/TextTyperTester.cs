@@ -42,9 +42,9 @@
             this.printNextButton.onClick.AddListener(this.HandlePrintNextClicked);
             this.printNoSkipButton.onClick.AddListener(this.HandlePrintNoSkipClicked);
 
-            dialogueLines.Enqueue("Hello! Lets Start our journey through the stars and learn about ... <delay=0.5><color=#ff0000ff>PROJECTILE MOTION</color></delay>. Got it?");
+            dialogueLines.Enqueue("Hello! Lets Start our journey through the stars and learn about ... <delay=0.2><color=#ff0000ff>PROJECTILE MOTION</color></delay>. Got it?");
             dialogueLines.Enqueue("We use <b><color=#00ff00ff>PROJECTILE MOTION</color></b> to calculate the time it takes to reach a <size=40>target</size>.");
-            dialogueLines.Enqueue("In the levels ahead ull see that the key factors of the formula are <b>Speed, Distance</b> and <b>Angle</b> ");
+            dialogueLines.Enqueue("In the levels ahead you'll see that the key factors of the formula are <b>Speed, Distance</b> and <b>Angle</b> ");
             dialogueLines.Enqueue("You can change the values by moving around");
             dialogueLines.Enqueue("Panel on the side will show the time being calculated in real time");
             dialogueLines.Enqueue("Just play around <color=#ff0000ff>Have fun</color> and find the <color=#00ff00ff>Target</color>.");

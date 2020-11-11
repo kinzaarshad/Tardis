@@ -26,7 +26,7 @@ public class PredictionManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        
+
         Physics.autoSimulation = false;
 
         currentScene = SceneManager.GetActiveScene();
@@ -109,6 +109,7 @@ public class PredictionManager : MonoBehaviour
             if (dummy == null)
             {
                 dummy = Instantiate(subject);
+                dummy.tag = "Untagged";
                 SceneManager.MoveGameObjectToScene(dummy, predictionScene);
             }
 

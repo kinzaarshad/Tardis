@@ -34,7 +34,7 @@ public class BasketballSceneManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("BasketballTutorialShown", 0).Equals(0))
             ShowTutorial();
-        
+
         AdsManager.ShowBanner();
     }
 
@@ -53,7 +53,7 @@ public class BasketballSceneManager : MonoBehaviour
     }
 
     void ShowTutorial() => TutorialPanel.SetActive(true);
-    
+
     public void HideTutorial()
     {
         Destroy(TutorialPanel);
@@ -65,5 +65,4 @@ public class BasketballSceneManager : MonoBehaviour
         AdsManager.ShowRewarded();
         SceneManager.LoadSceneAsync("Menu");
     }
-    
 }

@@ -77,7 +77,7 @@ public class CannonController : MonoBehaviour
         
         Distance.text = "Distance: " + distance.ToString("F1");
         time.text = "Time: " + distance.ToString("F1") + "/" + currentSpeed.ToString("F1") +
-                    " * Cos(" + currentAngle + ")";
+                    " * Cos(" + currentAngle.ToString("F1") + ")";
     }
 
     public void Fire()

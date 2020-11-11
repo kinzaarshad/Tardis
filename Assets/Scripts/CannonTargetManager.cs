@@ -30,15 +30,21 @@ public class CannonTargetManager : MonoBehaviour
     {
         if (score > 4)
             CannonSceneManager.Instance.GoBack();
+
+        if (Input.GetKeyUp(KeyCode.Space))
+            AssignRandomPosition();
     }
 
     public void AssignRandomPosition()
     {
         float angle = Random.Range(0f, 360f);
-        float distance = Random.Range(10f, 50f);
+        float distance = Random.Range(20f, 50f);
 
+        target.rotation = Quaternion.identity;
+         
         target.Rotate(new Vector3(0, angle, 0));
-        target.Translate(Vector3.zero, Space.Self);
+//        target.Translate(Vector3.zero, Space.Self);
+        target.localPosition = Vector3.zero;
         target.Translate(new Vector3(distance, 0, distance), Space.Self);
 
         arrow.position = target.position;
