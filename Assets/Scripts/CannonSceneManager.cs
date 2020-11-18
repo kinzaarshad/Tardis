@@ -61,7 +61,7 @@ public class CannonSceneManager : MonoBehaviour
     public void HideTutorial()
     {
         Destroy(TutorialPanel);
-//        PlayerPrefs.SetInt("CannonTutorialShown", 1);
+        PlayerPrefs.SetInt("CannonTutorialShown", 1);
     }
 
     public void GoBack()

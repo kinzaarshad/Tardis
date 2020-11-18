@@ -269,6 +269,7 @@
             </e>
           </e>
           <e p="Generated" t="Include">
+            <e p="EM_GPGSIds.cs" t="Include" />
             <e p="EM_IAPConstants.cs" t="Include" />
           </e>
           <e p="GUISkins" t="Include">
@@ -966,6 +967,7 @@
             <e p="GoogleMobileAdsDependencies.xml" t="Include" />
             <e p="GoogleMobileAdsSettings.cs" t="Include" />
             <e p="GoogleMobileAdsSettingsEditor.cs" t="Include" />
+            <e p="GoogleMobileAdsSKAdNetworkItems.xml" t="Include" />
             <e p="ManifestProcessor.cs" t="Include" />
             <e p="PListProcessor.cs" t="Include" />
           </e>
@@ -983,6 +985,7 @@
               <e p="ResponseInfoClient.cs" t="Include" />
               <e p="RewardBasedVideoAdClient.cs" t="Include" />
               <e p="RewardedAdClient.cs" t="Include" />
+              <e p="RewardedInterstitialAdClient.cs" t="Include" />
               <e p="Utils.cs" t="Include" />
             </e>
             <e p="GoogleMobileAdsClientFactory.cs" t="Include" />
@@ -1000,10 +1003,21 @@
               <e p="ResponseInfoClient.cs" t="Include" />
               <e p="RewardBasedVideoAdClient.cs" t="Include" />
               <e p="RewardedAdClient.cs" t="Include" />
+              <e p="RewardedInterstitialAdClient.cs" t="Include" />
               <e p="Utils.cs" t="Include" />
             </e>
             <e p="Unity" t="Include">
+              <e p="BannerClient.cs" t="Include" />
+              <e p="BaseAdDummyClient.cs" t="Include" />
+              <e p="ButtonBehaviour.cs" t="Include" />
+              <e p="Countdown.cs" t="Include" />
+              <e p="DummyAdBehaviour.cs" t="Include" />
               <e p="InitializationStatusDummyClient.cs" t="Include" />
+              <e p="InterstitialClient.cs" t="Include" />
+              <e p="ResponseInfoDummyClient.cs" t="Include" />
+              <e p="RewardedAdClient.cs" t="Include" />
+              <e p="RewardedInterstitialAdClient.cs" t="Include" />
+              <e p="RewardingAdBaseClient.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -1067,7 +1081,7 @@
         <e p="Plugins" t="Include">
           <e p="Android" t="Include">
             <e p="AndroidManifest.xml" t="Include" />
-            <e p="EasyMobile" t="Include">
+            <e p="EasyMobile.androidlib" t="Include">
               <e p="AndroidManifest.xml" t="Include" />
             </e>
             <e p="FirebaseApp.androidlib" t="Include">

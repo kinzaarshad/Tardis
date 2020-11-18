@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "484021923212",
+    "firebase_url": "https://tardis-css.firebaseio.com",
+    "project_id": "tardis-css",
+    "storage_bucket": "tardis-css.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484021923212:android:90750d4dd5dec9ffb13aa9",
+        "android_client_info": {
+          "package_name": "com.CSS.Tardis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484021923212-usr3u6ntd0murimofdg1d12vko8vm5o1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.CSS.Tardis",
+            "certificate_hash": "4a8bacf2fde9f6a5f402683b86c4790e2c493c74"
+          }
+        },
+        {
+          "client_id": "484021923212-m8fhpd0lkepe57agkt1p8v5536cb3qtq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.CSS.Tardis",
+            "certificate_hash": "17eaef5548853373a3ce1abc417414f89feab41a"
+          }
+        },
+        {
+          "client_id": "484021923212-n2u2sj86rmhao83745tjplgk3pcpqsh5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOPxtULZdEBYvMS0ewu4Qqb2ZYyw9AlP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484021923212-n2u2sj86rmhao83745tjplgk3pcpqsh5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

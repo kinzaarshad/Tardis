@@ -28,6 +28,7 @@
     }
 }
 // Android Resolver Repos End
+
 apply plugin: 'com.android.library'
 **APPLY_PLUGINS**
 
@@ -45,7 +46,7 @@ dependencies {
     implementation 'com.facebook.android:facebook-gamingservices:[8.0, 9)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:9
     implementation 'com.facebook.android:facebook-login:[8.0, 9)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:7
     implementation 'com.facebook.android:facebook-share:[8.0, 9)' // Assets/FacebookSDK/Plugins/Editor/Dependencies.xml:8
-    implementation 'com.google.android.gms:play-services-ads:19.3.0' // Assets/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml:7
+    implementation 'com.google.android.gms:play-services-ads:19.5.0' // Assets/GoogleMobileAds/Editor/GoogleMobileAdsDependencies.xml:7
     implementation 'com.google.android.gms:play-services-auth:16+' // Assets/GoogleSignIn/Editor/GoogleSignInDependencies.xml:10
     implementation 'com.google.android.gms:play-services-base:17.4.0' // Assets/Firebase/Editor/AppDependencies.xml:17
     implementation 'com.google.android.play:core:1.8.+' // Assets/EasyMobile/Editor/EasyMobileDependencies.xml:22

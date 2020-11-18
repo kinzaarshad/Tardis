@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "484021923212-usr3u6ntd0murimofdg1d12vko8vm5o1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.CSS.Tardis",
+            "certificate_hash": "4a8bacf2fde9f6a5f402683b86c4790e2c493c74"
+          }
+        },
+        {
           "client_id": "484021923212-m8fhpd0lkepe57agkt1p8v5536cb3qtq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

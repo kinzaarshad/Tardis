@@ -15,8 +15,8 @@ public class AuthenticationManager : MonoBehaviour
 {
     public static AuthenticationManager Instance { get; set; }
 
-//    public TextMeshProUGUI infoText;
-    public string webClientId = "236921651333-gilu5v1eol1h2u2mj60v18udctt9mef2.apps.googleusercontent.com";
+    public TextMeshProUGUI infoText;
+    public string webClientId = "484021923212-n2u2sj86rmhao83745tjplgk3pcpqsh5.apps.googleusercontent.com";
     public GameObject loginButtons;
 
     internal FirebaseAuth auth;
@@ -38,6 +38,17 @@ public class AuthenticationManager : MonoBehaviour
             RequestEmail = true,
             RequestIdToken = true
         };
+        if (!FB.IsInitialized)
+        {
+            // Initialize the Facebook SDK
+            FB.Init(SetInit, onHidenUnity);
+        }
+        else
+        {
+            // Already initialized, signal an app activation App Event
+            FB.ActivateApp();
+        }
+
         FB.Init(SetInit, onHidenUnity);
         CheckFirebaseDependencies();
     }
@@ -47,10 +58,12 @@ public class AuthenticationManager : MonoBehaviour
         if (FB.IsLoggedIn)
         {
             Debug.Log("Facebook is Login!");
+            infoText.text = "Facebook is Login!";
         }
         else
         {
             Debug.Log("Facebook is not Logged in!");
+            infoText.text = "Facebook is not Logged in!";
         }
 
         DealWithFbMenus(FB.IsLoggedIn);
@@ -70,7 +83,7 @@ public class AuthenticationManager : MonoBehaviour
 
     private void CheckFirebaseDependencies()
     {
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
@@ -160,7 +173,7 @@ public class AuthenticationManager : MonoBehaviour
 
     public void SignInWithGoogle()
     {
-        if (FB.IsLoggedIn) FB.LogOut();
+//        if (FB.IsLoggedIn) FB.LogOut();
         OnSignIn();
     }
 
@@ -171,13 +184,46 @@ public class AuthenticationManager : MonoBehaviour
 
     private void OnSignIn()
     {
-        GoogleSignIn.Configuration = configuration;
-        GoogleSignIn.Configuration.UseGameSignIn = false;
-        GoogleSignIn.Configuration.RequestIdToken = true;
-        AddToInformation("Calling SignIn");
+        try
+        {
+            GoogleSignIn.Configuration = configuration;
+            GoogleSignIn.Configuration.UseGameSignIn = false;
+            GoogleSignIn.Configuration.RequestIdToken = true;
+            AddToInformation("Calling SignIn");
+        }
+        catch (Exception e)
+        {
+            AddToInformation(e.Message);
+            throw;
+        }
 
-        GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnAuthenticationFinished);
+        GoogleSignIn.DefaultInstance.SignIn().ContinueWithOnMainThread(OnAuthenticationFinished);
     }
+
+/*
+    public void Configure(GoogleSignInConfiguration configuration)
+    {
+        if (configuration != null)
+        {
+            List<string> scopes = new List<string>();
+            if (configuration.AdditionalScopes != null)
+            {
+                scopes.AddRange(configuration.AdditionalScopes);
+            }
+
+            GoogleSignIn_Configure(SelfPtr(), configuration.UseGameSignIn,
+                configuration.WebClientId,
+                configuration.RequestAuthCode,
+                configuration.ForceTokenRefresh,
+                configuration.RequestEmail,
+                configuration.RequestIdToken,
+                configuration.HidePopups,
+                scopes.ToArray(),
+                scopes.Count,
+                configuration.AccountName);
+        }
+    }
+*/
 
     private void OnSignOut()
     {
@@ -291,21 +337,24 @@ public class AuthenticationManager : MonoBehaviour
 //        var permissions = new List<string>() {"email", "user_birthday", "user_friends", "public_profile"};
         var permissions = new List<string>() {"public_profile", "email"};
         FB.LogInWithReadPermissions(permissions, LoginCallback);
+        infoText.text = "FB Login";
     }
 
     void LoginCallback(IResult result)
     {
+        infoText.text = "LoginCallback";
+
         if (result.Error != null)
         {
-//            infoText.text = "Error Response:\n" + result.Error;
+            infoText.text = "Error Response:\n" + result.Error;
         }
         else if (!FB.IsLoggedIn)
         {
-//            infoText.text = "Login cancelled by Player";
+            infoText.text = "Login cancelled by Player";
         }
         else
         {
-//            infoText.text = "Login was successful!";
+            infoText.text = "Login was successful!";
             FB.API("/me?fields=id,name,email", HttpMethod.GET, LoginCallback2);
         }
     }
@@ -314,11 +363,11 @@ public class AuthenticationManager : MonoBehaviour
     {
         if (result.Error != null)
         {
-//            infoText.text = "Error Response:\n" + result.Error;
+            infoText.text = "Error Response:\n" + result.Error;
         }
         else if (!FB.IsLoggedIn)
         {
-//            infoText.text = "Login cancelled by Player";
+            infoText.text = "Login cancelled by Player";
         }
         else
         {
@@ -329,12 +378,12 @@ public class AuthenticationManager : MonoBehaviour
             FirebaseUser newUser = auth.CurrentUser;
             if (newUser != null)
             {
-//                infoText.text = "User signed in successfully: " + newUser.DisplayName + ", " + newUser.UserId;
+                infoText.text = "User signed in successfully: " + newUser.DisplayName + ", " + newUser.UserId;
                 loginButtons.SetActive(false);
             }
             else
             {
-//                infoText.text = "Failed to fetch data";
+                infoText.text = "Failed to fetch data";
             }
 
 //            print("your name is: " + fbname);
@@ -349,24 +398,24 @@ public class AuthenticationManager : MonoBehaviour
         {
             if (task.IsCanceled)
             {
-//                infoText.text = "SignInWithCredentialAsync was canceled.";
+                infoText.text = "SignInWithCredentialAsync was canceled.";
                 return;
             }
 
             if (task.IsFaulted)
             {
-//                infoText.text += "SignInWithCredentialAsync encountered an error: " + task.Exception;
+                infoText.text += "SignInWithCredentialAsync encountered an error: " + task.Exception;
                 return;
             }
 
             FirebaseUser newUser = task.Result;
-//            infoText.text = "User signed in successfully: " + newUser.DisplayName + ", " + newUser.UserId;
+            infoText.text = "User signed in successfully: " + newUser.DisplayName + ", " + newUser.UserId;
         });
     }
 
     private void AddToInformation(string str)
     {
-//        infoText.text = str;
+        infoText.text = str;
     }
 
     void DealWithFbMenus(bool isLoggedIn)

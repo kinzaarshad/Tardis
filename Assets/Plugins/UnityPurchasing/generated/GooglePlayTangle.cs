@@ -4,9 +4,9 @@
 namespace UnityEngine.Purchasing.Security {
     public class GooglePlayTangle
     {
-        private static byte[] data = System.Convert.FromBase64String("iiCaHFp4N0l03UJkv9eHC9OQYe84igkqOAUOASKOQI7/BQkJCQ0IC3Hal83xfhrlC7KdOTrICSh+NFqgjFYr4UfxgSEBpjk/5+AVNEB55syKCQcIOIoJAgqKCQkIiHK8yb+nGlAX7v9y4RUl0ZF/FmZqu9iiiEAsUVaUJ1GNIMW8UuNQ1a7IcirST+f7/Y+jkYHjmt9BHpYzE+amRt10X+OBS2WuSnB9BcryLsX9aq1ho9o5ZQAVoQZgI99y3yz0nZaLiK0MXwZ9J6abi9bCovpvhBcTqXcQmk+Rlxa8jn23FE3xesEEQNs+Zi5Mz55lJcErl/1ziFnvAor04CTlv/TzBiFDIUGuCXxoUyOGREGtMjb207+mJwzrFzmt9yZNBQoLCQgJ");
-        private static int[] order = new int[] { 8,8,3,4,8,7,7,9,8,13,13,12,13,13,14 };
-        private static int key = 8;
+        private static byte[] data = System.Convert.FromBase64String("jT+8n42wu7SXO/U7SrC8vLy4vb4/vLK9jT+8t78/vLy9PccJfAoSr/aU9Bu8yd3mljPx9BiHg0NmChOSowk7yAKh+ETPdLH1bovTm/l6K9A/lS+p782C/MFo99EKYjK+ZiXUWk5IOhYkNFYvavSrI4amUxPzaMHq0LWgFLPVlmrHaplBKCM+PRi56rPloltKx1SgkGQkyqPT3w5tFz31mZB0niJIxj3sWrc/QVWRUApBRrOUVjT+0Bv/xciwf0ebcEjfGNQWb4zIkhMuPmN3F0/aMaKmHMKlL/okIsRvInhEy69QvgcojI99vJ3Lge8VOeOeVPJENJS0E4yKUlWggfXMU3nk4yGS5DiVcAnnVuVgG33Hn2f6UrleoowYQpP4sL++vL28");
+        private static int[] order = new int[] { 0,1,11,12,8,9,13,7,10,11,13,12,13,13,14 };
+        private static int key = 189;
 
         public static readonly bool IsPopulated = true;
 
