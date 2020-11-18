@@ -10,6 +10,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/CannonSceneManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
+              <folding>
+                <marker date="1605127392846" expanded="true" signature="6:168" ph="..." />
+                <marker date="1605127392846" expanded="true" signature="217:1830" ph="{...}" />
+                <marker date="1605127392846" expanded="true" signature="619:1157" ph="{...}" />
+                <marker date="1605127392846" expanded="true" signature="1185:1338" ph="{...}" />
+                <marker date="1605127392846" expanded="true" signature="1366:1521" ph="{...}" />
+                <marker date="1605127392846" expanded="true" signature="1612:1710" ph="{...}" />
+                <marker date="1605127392846" expanded="true" signature="1736:1828" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/FacebookSDK/Examples/Scripts/SubMenus/MainMenu.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -426,7 +444,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="240" />
     <option name="y" value="130" />
     <option name="width" value="1440" />
