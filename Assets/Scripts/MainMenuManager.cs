@@ -15,10 +15,10 @@ public class MainMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if !UNITY_EDITOR
-        if (Input.GetKey(KeyCode.Escape))
-            LoadLevel(0);
-#endif
+//#if !UNITY_EDITOR
+//        if (Input.GetKey(KeyCode.Escape))
+//            LoadLevel(0);
+//#endif
     }
 
     public void LoadLevel(int level)

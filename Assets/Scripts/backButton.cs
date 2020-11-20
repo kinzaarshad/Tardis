@@ -12,17 +12,17 @@ public class backButton : MonoBehaviour
    // Start is called before the first frame update
     void Start()
     {
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
+//        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Application.platform == RuntimePlatform.Android){
+        /*if (Application.platform == RuntimePlatform.Android){
             if (Input.GetKey(KeyCode.Escape)){
                 SceneManager.LoadScene(sceneNumber);
                 }
-        }
+        }*/
     }
     public void onButtonPress()
     {

@@ -356,5 +356,5 @@ MonoBehaviour:
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
-  mActiveModuleIndex: 8
+  mActiveModuleIndex: 3
   mIsSelectingModule: 1
