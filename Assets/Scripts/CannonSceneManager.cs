@@ -38,8 +38,13 @@ public class CannonSceneManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("CannonTutorialShown", 0).Equals(0))
             ShowTutorial();
+        AdsManager.ShowingBanner = false;
+    }
 
-        AdsManager.ShowBanner();
+    private void Update()
+    {
+        if (!AdsManager.ShowingBanner)
+            AdsManager.ShowBanner();
     }
 
     public void ShowInfo()
@@ -66,7 +71,7 @@ public class CannonSceneManager : MonoBehaviour
 
     public void GoBack()
     {
-        AdsManager.ShowRewarded();
+        AdsManager.ShowVideoAd();
         SceneManager.LoadSceneAsync("Menu");
     }
 }

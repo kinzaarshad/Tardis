@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class AdsManager : MonoBehaviour
 {
+    public static bool ShowingBanner;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -13,9 +15,16 @@ public class AdsManager : MonoBehaviour
             RuntimeManager.Init();
     }
 
+    private void Start()
+    {
+                ShowingBanner = false;
+    }
+
     public static void ShowBanner()
     {
-        Advertising.ShowBannerAd(BannerAdPosition.Bottom, BannerAdSize.Leaderboard);
+        if (ShowingBanner) return;
+        Advertising.ShowBannerAd(BannerAdPosition.Bottom, BannerAdSize.Banner);
+        ShowingBanner = true;
     }
 
     public static void ShowInterstitial()
@@ -30,6 +39,17 @@ public class AdsManager : MonoBehaviour
         {
             Advertising.ShowRewardedAd();
             Advertising.RewardedAdCompleted += OnRewardedAdCompleted;
+        }
+    }
+
+    public static void ShowVideoAd()
+    {
+        if (Advertising.IsAdRemoved())
+            return;
+
+        if (Advertising.IsRewardedAdReady())
+        {
+            Advertising.ShowRewardedAd();
         }
     }
 

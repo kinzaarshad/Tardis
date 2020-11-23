@@ -9,7 +9,6 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AdsManager.ShowBanner();
     }
 
     // Update is called once per frame
@@ -19,6 +18,8 @@ public class MainMenuManager : MonoBehaviour
 //        if (Input.GetKey(KeyCode.Escape))
 //            LoadLevel(0);
 //#endif
+        if (!AdsManager.ShowingBanner)
+            AdsManager.ShowBanner();
     }
 
     public void LoadLevel(int level)
